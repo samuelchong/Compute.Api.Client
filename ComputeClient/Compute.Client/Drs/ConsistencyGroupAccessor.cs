@@ -119,5 +119,15 @@
         {
             return await _apiClient.PostAsync<InitiateFailoverType, ResponseType>(ApiUris.InitiateFailover(_apiClient.OrganizationId), InitiateFailover);
         }
-    }
+
+		/// <summary>
+		/// Expand journal
+		/// </summary>
+		/// <param name="expandJournalType">Expand journal type.</param>
+		/// <returns>The <see cref="ResponseType"/></returns>
+		public async Task<ResponseType> ExpandJournal(ExpandJournalType expandJournalType)
+		{
+			return await _apiClient.PostAsync<ExpandJournalType, ResponseType>(ApiUris.ExpandJournal(_apiClient.OrganizationId), expandJournalType);
+		}
+	}
 }

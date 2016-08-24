@@ -69,5 +69,13 @@
         /// <param name="InitiateFailover">The Initiate failover type.</param>
         /// <returns>The <see cref="ResponseType"/></returns>
         Task<ResponseType> InitiateFailoverForConsistencyGroup(InitiateFailoverType InitiateFailover);
+
+	    /// <summary>
+	    /// Expand journal
+	    /// </summary>
+	    /// <param name="expandJournalType">Expand journal type.</param>
+	    /// <returns>The <see cref="ResponseType"/></returns>
+	    Task<ResponseType> ExpandJournal(ExpandJournalType expandJournalType);
+
     }
 }

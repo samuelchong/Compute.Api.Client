@@ -91,6 +91,7 @@
     <Compile Include="Drs\ConsistencyGroupOverride.cs" />
     <Compile Include="Drs\ConsistencyGroupSnapshot.cs" />
     <Compile Include="Drs\ConsistencyGroup.cs" />
+    <Compile Include="Drs\ExpandJournalType.cs" />
     <Compile Include="EntityStatus.cs" />
     <Compile Include="Generic\IEntityStatusV2.cs" />
     <Compile Include="Network20\FirewallOverride.cs" />
