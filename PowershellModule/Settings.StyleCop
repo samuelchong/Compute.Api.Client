@@ -1,9 +1,0 @@
-<StyleCopSettings Version="105">
-  <GlobalSettings>
-    <CollectionProperty Name="RecognizedWords">
-      <Value>Caas</Value>
-      <Value>datacenter</Value>
-      <Value>cmdlet</Value>
-    </CollectionProperty>
-  </GlobalSettings>
-</StyleCopSettings>
