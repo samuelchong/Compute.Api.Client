@@ -12,7 +12,7 @@ namespace DD.CBU.Compute.Api.Contracts.Drs
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
-	[System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:didata.com:api:cloud:types", IsNullable = true)]
+	[System.Xml.Serialization.XmlRootAttribute("expandJournal", Namespace = "urn:didata.com:api:cloud:types", IsNullable = true)]
 	public partial class ExpandJournalType
 	{
 		private int sizeGbField;
