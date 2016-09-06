@@ -147,7 +147,10 @@ namespace DD.CBU.Compute.Api.Contracts.Drs
         public string operationStatus;
 
         /// <remarks/>
-        public string drsInfrastructureStatus;
+        public ConsistencyGroupTypeDrsInfrastructure drsInfrastructure;
+
+        /// <remarks/>
+        public int drsStatusCheckFailureCount;
 
         /// <remarks/>
         public string state;
@@ -200,6 +203,28 @@ namespace DD.CBU.Compute.Api.Contracts.Drs
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string state;
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "urn:didata.com:api:cloud:types")]
+    public partial class ConsistencyGroupTypeDrsInfrastructure
+    {
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool enabled;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string status;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public System.DateTime updateTime;
     }
 
     /// <remarks/>
