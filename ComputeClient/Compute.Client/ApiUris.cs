@@ -12,9 +12,6 @@
         /// <summary>	The MCP 1.0 prefix. </summary>
         public const string MCP1_0_PREFIX = "oec/0.9/";
 
-		/// <summary>	The MCP 2.2 prefix. </summary>
-		public const string MCP2_2_PREFIX = "caas/2.2/";
-
 		/// <summary>	The MCP 2.3 prefix. </summary>
 		public const string MCP2_3_PREFIX = "caas/2.3/";
 
@@ -2131,7 +2128,7 @@
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri CreateTagKey(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_2_PREFIX + "{0}/tag/createTagKey", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_3_PREFIX + "{0}/tag/createTagKey", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for list tag key.</summary>
@@ -2139,7 +2136,7 @@
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri ListTagKeys(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_2_PREFIX + "{0}/tag/tagKey", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_3_PREFIX + "{0}/tag/tagKey", orgId), UriKind.Relative);
         }
 
 
@@ -2149,7 +2146,7 @@
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri GetTagKey(Guid orgId, Guid tagKeyId)
         {
-            return new Uri(string.Format(MCP2_2_PREFIX + "{0}/tag/tagKey/{1}", orgId, tagKeyId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_3_PREFIX + "{0}/tag/tagKey/{1}", orgId, tagKeyId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for edit tag key.</summary>
@@ -2157,7 +2154,7 @@
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri EditTagKey(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_2_PREFIX + "{0}/tag/editTagKey", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_3_PREFIX + "{0}/tag/editTagKey", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for delete tag key.</summary>
@@ -2165,7 +2162,7 @@
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri DeleteTagKey(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_2_PREFIX + "{0}/tag/deleteTagKey", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_3_PREFIX + "{0}/tag/deleteTagKey", orgId), UriKind.Relative);
         }
 
 
@@ -2174,7 +2171,7 @@
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri ApplyTags(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_2_PREFIX + "{0}/tag/applyTags", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_3_PREFIX + "{0}/tag/applyTags", orgId), UriKind.Relative);
         }
 
         /// <summary>The get tags.</summary>
@@ -2182,7 +2179,7 @@
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri GetTags(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_2_PREFIX + "{0}/tag/tag", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_3_PREFIX + "{0}/tag/tag", orgId), UriKind.Relative);
         }
 
         /// <summary>The remove tag.</summary>
@@ -2190,7 +2187,7 @@
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri RemoveTag(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_2_PREFIX + "{0}/tag/removeTags", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_3_PREFIX + "{0}/tag/removeTags", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for get consistency groups.</summary>
