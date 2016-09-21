@@ -294,8 +294,8 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
-	public partial class ClusterType
-	{
+	public partial class DatacenterClusterType
+    {
 
 		private string displayNameField;
 
@@ -390,7 +390,7 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         private CpuSpeedType[] cpuSpeedField;
 
-		private ClusterType[] clusterField;
+		private DatacenterClusterType[] clusterField;
 
 		private PropertyType[] propertyField;
 
@@ -416,7 +416,7 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
 		/// <remarks/>
 		[System.Xml.Serialization.XmlElementAttribute("cluster")]
-		public ClusterType[] cluster
+		public DatacenterClusterType[] cluster
 		{
 			get
 			{

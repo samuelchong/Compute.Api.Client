@@ -47,6 +47,21 @@
         /// </summary>
         public const string OperatingSystemFamilyField = "operatingSystemFamily";
 
+        /// <summary>
+        /// The "GuestOsCustomization" field name.
+        /// </summary>
+        public const string GuestOsCustomizationField = "guestOsCustomization";
+
+        /// <summary>
+        /// The "ClusterId" field name.
+        /// </summary>
+        public const string ClusterIdField = "clusterId";
+
+        /// <summary>
+        /// The "ClusterName" field name.
+        /// </summary>
+        public const string ClusterNameField = "clusterName";
+
         /// <summary>	
         /// Identifies an individual Virtual Listener.
         /// </summary>
@@ -135,6 +150,33 @@
         {
             get { return GetFilter<string>(OperatingSystemFamilyField); }
             set { SetFilter(OperatingSystemFamilyField, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets the Guest Os Customization filter.
+        /// </summary>
+        public bool? GuestOsCustomization
+        {
+            get { return GetFilter<bool>(GuestOsCustomizationField); }
+            set { SetFilter(GuestOsCustomizationField, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets the cluster id filter.
+        /// </summary>
+        public string ClusterId
+        {
+            get { return GetFilter<string>(ClusterIdField); }
+            set { SetFilter(ClusterIdField, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets the cluster name filter.
+        /// </summary>
+        public string ClusterName
+        {
+            get { return GetFilter<string>(ClusterNameField); }
+            set { SetFilter(ClusterNameField, value); }
         }
     }
 }

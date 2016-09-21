@@ -46,6 +46,10 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         private string datacenterIdField;
 
+        private ClusterType clusterField;
+
+        private ImageTypeNic nicField;
+
         /// <remarks/>
         public string name
         {
@@ -119,6 +123,22 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
             get { return this.datacenterIdField; }
             set { this.datacenterIdField = value; }
         }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("cluster")]
+        public ClusterType cluster
+        {
+            get { return this.clusterField; }
+            set { this.clusterField = value; }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("nic")]
+        public ImageTypeNic nic
+        {
+            get { return this.nicField; }
+            set { this.nicField = value; }
+        }
     }
 
     /// <remarks/>
@@ -168,6 +188,64 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         {
             get { return this.speedField; }
             set { this.speedField = value; }
+        }
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "urn:didata.com:api:cloud:types")]
+    public partial class ClusterType
+    {
+        private string idField;
+
+        private string nameField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string id
+        {
+            get { return this.idField; }
+            set { this.idField = value; }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string name
+        {
+            get { return this.nameField; }
+            set { this.nameField = value; }
+        }
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "urn:didata.com:api:cloud:types")]
+    public partial class ImageTypeNic
+    {
+        private string networkAdapterField;
+
+        private string keyField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string networkAdapter
+        {
+            get { return this.networkAdapterField; }
+            set { this.networkAdapterField = value; }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string key
+        {
+            get { return this.keyField; }
+            set { this.keyField = value; }
         }
     }
 
@@ -523,11 +601,59 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         private string osImageKeyField;
 
+        private int sortOrderField;
+
+        private ImageTypeGuest guestField;
+
         /// <remarks/>
         public string osImageKey
         {
             get { return this.osImageKeyField; }
             set { this.osImageKeyField = value; }
+        }
+
+        /// <remarks/>
+        public int sortOrder
+        {
+            get { return this.sortOrderField; }
+            set { this.sortOrderField = value; }
+        }
+
+        /// <remarks/>
+        public ImageTypeGuest guest
+        {
+            get { return this.guestField; }
+            set { this.guestField = value; }
+        }
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    [System.Xml.Serialization.XmlRootAttribute("osImage", Namespace = "urn:didata.com:api:cloud:types",
+        IsNullable = false)]
+    public partial class ImageTypeGuest
+    {
+        private OperatingSystemType[] operatingSystemField;
+
+        private bool osCustomizationField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("operatingSystem")]
+        public OperatingSystemType[] operatingSystem
+        {
+            get { return this.operatingSystemField; }
+            set { this.operatingSystemField = value; }
+        }
+
+        /// <remarks/>
+        public bool osCustomization
+        {
+            get { return this.osCustomizationField; }
+            set { this.osCustomizationField = value; }
         }
     }
 
