@@ -301,6 +301,10 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
 		private string descriptionField;
 
+		private DiskSpeedType[] diskSpeedField;
+
+		private CpuSpeedType[] cpuSpeedField;
+
 		private PropertyType[] propertyField;
 
 		private string idField;
@@ -330,6 +334,34 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 			set
 			{
 				this.descriptionField = value;
+			}
+		}
+
+		/// <remarks/>
+		[System.Xml.Serialization.XmlElementAttribute("diskSpeed")]
+		public DiskSpeedType[] diskSpeed
+		{
+			get
+			{
+				return this.diskSpeedField;
+			}
+			set
+			{
+				this.diskSpeedField = value;
+			}
+		}
+
+		/// <remarks/>
+		[System.Xml.Serialization.XmlElementAttribute("cpuSpeed")]
+		public CpuSpeedType[] cpuSpeed
+		{
+			get
+			{
+				return this.cpuSpeedField;
+			}
+			set
+			{
+				this.cpuSpeedField = value;
 			}
 		}
 
