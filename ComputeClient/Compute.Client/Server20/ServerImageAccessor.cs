@@ -47,6 +47,7 @@
         /// Get OS Images
         /// </summary>
         /// <param name="filteringOptions">Filtering options</param>
+        /// <param name="pagingOptions"></param>
         /// <returns>OS Images</returns>
         public async Task<PagedResponse<OsImageType>> GetOsImages(ServerOsImageListOptions filteringOptions = null, IPageableRequest pagingOptions = null)
         {
