@@ -48,7 +48,7 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         private ClusterType clusterField;
 
-        private ImageTypeNic nicField;
+        private ImageTypeNic[] nicField;
 
         /// <remarks/>
         public string name
@@ -134,7 +134,7 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("nic")]
-        public ImageTypeNic nic
+        public ImageTypeNic[] nic
         {
             get { return this.nicField; }
             set { this.nicField = value; }
