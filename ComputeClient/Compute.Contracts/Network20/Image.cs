@@ -637,13 +637,13 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         IsNullable = false)]
     public partial class ImageTypeGuest
     {
-        private OperatingSystemType[] operatingSystemField;
+        private OperatingSystemType operatingSystemField;
 
         private bool osCustomizationField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("operatingSystem")]
-        public OperatingSystemType[] operatingSystem
+        public OperatingSystemType operatingSystem
         {
             get { return this.operatingSystemField; }
             set { this.operatingSystemField = value; }
