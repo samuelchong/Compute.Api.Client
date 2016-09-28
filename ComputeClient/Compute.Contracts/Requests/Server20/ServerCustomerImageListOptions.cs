@@ -43,6 +43,21 @@
         public const string OperatingSystemFamilyField = "operatingSystemFamily";
 
         /// <summary>
+        /// The "GuestOsCustomization" field name.
+        /// </summary>
+        public const string GuestOsCustomizationField = "guestOsCustomization";
+
+        /// <summary>
+        /// The "ClusterId" field name.
+        /// </summary>
+        public const string ClusterIdField = "clusterId";
+
+        /// <summary>
+        /// The "SourceType" field name.
+        /// </summary>
+        public const string SourceTypeField = "sourceType";
+
+        /// <summary>
         /// Gets or sets the id filter.
         /// </summary>
         public Guid? Id
@@ -130,6 +145,33 @@
         {
             get { return GetFilter<string>(OperatingSystemFamilyField); }
             set { SetFilter(OperatingSystemFamilyField, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets the Guest Os Customization filter.
+        /// </summary>
+        public bool? GuestOsCustomization
+        {
+            get { return GetFilter<bool>(GuestOsCustomizationField); }
+            set { SetFilter(GuestOsCustomizationField, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets the cluster id filter.
+        /// </summary>
+        public string ClusterId
+        {
+            get { return GetFilter<string>(ClusterIdField); }
+            set { SetFilter(ClusterIdField, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets the source type filter.
+        /// </summary>
+        public string SourceType
+        {
+            get { return GetFilter<string>(SourceTypeField); }
+            set { SetFilter(SourceTypeField, value); }
         }
     }
 }

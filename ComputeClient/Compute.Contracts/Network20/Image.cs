@@ -365,6 +365,8 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         private string stateField;
 
+        private GuestType guestField;
+
         private ProgressType progressField;
 
         private VmwareToolsType vmwareToolsField;
@@ -404,6 +406,109 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         {
             get { return this.virtualHardwareField; }
             set { this.virtualHardwareField = value; }
+        }
+
+        /// <remarks/>
+        public GuestType guest
+        {
+            get { return this.guestField; }
+            set { this.guestField = value; }
+        }
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    public partial class GuestType
+    {
+        private OperatingSystemType operatingSystemField;
+
+        private VmToolsType vmToolsField;
+
+        private bool osCustomizationField;
+
+        /// <remarks/>
+        public OperatingSystemType operatingSystem
+        {
+            get { return this.operatingSystemField; }
+            set { this.operatingSystemField = value; }
+        }
+
+        /// <remarks/>
+        public VmToolsType vmTools
+        {
+            get { return this.vmToolsField; }
+            set { this.vmToolsField = value; }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool osCustomization
+        {
+            get { return this.osCustomizationField; }
+            set { this.osCustomizationField = value; }
+        }
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    public partial class VmToolsType
+    {
+        private string typeField;
+
+        private string versionStatusField;
+
+        private string runningStatusField;
+
+        private int apiVersionField;
+
+        private bool apiVersionSpecifiedField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string type
+        {
+            get { return this.typeField; }
+            set { this.typeField = value; }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string versionStatus
+        {
+            get { return this.versionStatusField; }
+            set { this.versionStatusField = value; }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string runningStatus
+        {
+            get { return this.runningStatusField; }
+            set { this.runningStatusField = value; }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int apiVersion
+        {
+            get { return this.apiVersionField; }
+            set { this.apiVersionField = value; }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool apiVersionSpecified
+        {
+            get { return this.apiVersionSpecifiedField; }
+            set { this.apiVersionSpecifiedField = value; }
         }
     }
 

@@ -57,11 +57,6 @@
         /// </summary>
         public const string ClusterIdField = "clusterId";
 
-        /// <summary>
-        /// The "ClusterName" field name.
-        /// </summary>
-        public const string ClusterNameField = "clusterName";
-
         /// <summary>	
         /// Identifies an individual Virtual Listener.
         /// </summary>
@@ -168,15 +163,6 @@
         {
             get { return GetFilter<string>(ClusterIdField); }
             set { SetFilter(ClusterIdField, value); }
-        }
-
-        /// <summary>
-        /// Gets or sets the cluster name filter.
-        /// </summary>
-        public string ClusterName
-        {
-            get { return GetFilter<string>(ClusterNameField); }
-            set { SetFilter(ClusterNameField, value); }
         }
     }
 }

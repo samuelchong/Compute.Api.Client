@@ -1857,7 +1857,7 @@
         /// <returns>	The MCP 2 images. </returns>
         public static Uri GetMcp2CustomerImages(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_3_PREFIX + "{0}/image/customerImage", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_4_PREFIX + "{0}/image/customerImage", orgId), UriKind.Relative);
         }
 
         /// <summary>	Gets MCP 2 customer image. </summary>
@@ -1866,7 +1866,7 @@
         /// <returns>	The MCP 2 images. </returns>
         public static Uri GetMcp2CustomerImage(Guid orgId, Guid imageId)
         {
-            return new Uri(string.Format(MCP2_3_PREFIX + "{0}/image/customerImage/{1}", orgId, imageId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_4_PREFIX + "{0}/image/customerImage/{1}", orgId, imageId), UriKind.Relative);
         }
 
         /// <summary>	Edit MCP 2 customer image metadata </summary>
