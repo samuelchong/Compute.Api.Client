@@ -708,7 +708,7 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         private int sortOrderField;
 
-        private ImageTypeGuest guestField;
+        private OsImageTypeGuest guestField;
 
         /// <remarks/>
         public string osImageKey
@@ -725,7 +725,7 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         }
 
         /// <remarks/>
-        public ImageTypeGuest guest
+        public OsImageTypeGuest guest
         {
             get { return this.guestField; }
             set { this.guestField = value; }
@@ -740,14 +740,13 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
     [System.Xml.Serialization.XmlRootAttribute("osImage", Namespace = "urn:didata.com:api:cloud:types",
         IsNullable = false)]
-    public partial class ImageTypeGuest
+    public partial class OsImageTypeGuest
     {
         private OperatingSystemType operatingSystemField;
 
         private bool osCustomizationField;
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("operatingSystem")]
         public OperatingSystemType operatingSystem
         {
             get { return this.operatingSystemField; }
@@ -755,6 +754,7 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         }
 
         /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool osCustomization
         {
             get { return this.osCustomizationField; }
