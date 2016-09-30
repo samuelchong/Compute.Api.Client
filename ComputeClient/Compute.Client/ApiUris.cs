@@ -607,7 +607,7 @@
         /// <returns>	The MCP 2 servers. </returns>
         public static Uri GetMcp2Servers(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_3_PREFIX + "{0}/server/server", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_4_PREFIX + "{0}/server/server", orgId), UriKind.Relative);
         }
 
         /// <summary>	Gets MCP 2 server. </summary>
@@ -617,7 +617,7 @@
         /// <returns>	The MCP 2 servers. </returns>
         public static Uri GetMcp2Server(Guid orgId, Guid serverId)
         {
-            return new Uri(string.Format(MCP2_3_PREFIX + "{0}/server/server/{1}", orgId, serverId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_4_PREFIX + "{0}/server/server/{1}", orgId, serverId), UriKind.Relative);
         }
 
         /// <summary>Gets the list anti affinity rule URL.</summary>

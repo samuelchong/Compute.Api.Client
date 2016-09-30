@@ -29,8 +29,8 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         private PrivateIpv4OrVlanIdChoiceType itemElementNameField;
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("privateIpv4", typeof (string), Order = 1)]
-        [System.Xml.Serialization.XmlElementAttribute("vlanId", typeof (string), Order = 1)]
+        [System.Xml.Serialization.XmlElementAttribute("privateIpv4", typeof(string), Order = 1)]
+        [System.Xml.Serialization.XmlElementAttribute("vlanId", typeof(string), Order = 1)]
         [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemElementName")]
         public string Item
         {
@@ -45,8 +45,8 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
             get { return this.itemElementNameField; }
             set { this.itemElementNameField = value; }
         }
-    }    
-    
+    }
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
     [System.SerializableAttribute()]
@@ -63,8 +63,8 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         private PrivateIpv4OrVlanIdChoiceType itemElementNameField;
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("privateIpv4", typeof (string))]
-        [System.Xml.Serialization.XmlElementAttribute("vlanId", typeof (string))]
+        [System.Xml.Serialization.XmlElementAttribute("privateIpv4", typeof(string))]
+        [System.Xml.Serialization.XmlElementAttribute("vlanId", typeof(string))]
         [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemElementName")]
         public string Item
         {
@@ -123,7 +123,11 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         private string macAddressField;
 
+        private int keyField;
+
         private string stateField;
+
+        private string networkAdapterField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
@@ -167,6 +171,14 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int key
+        {
+            get { return this.keyField; }
+            set { this.keyField = value; }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
         public string macAddress
         {
             get { return this.macAddressField; }
@@ -179,6 +191,14 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         {
             get { return this.stateField; }
             set { this.stateField = value; }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string networkAdapter
+        {
+            get { return this.networkAdapterField; }
+            set { this.networkAdapterField = value; }
         }
     }
 
@@ -235,10 +255,16 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         private drsEligible drsEligibleField;
 
-	    private consistencyGroup consistencyGroupField;
+        private consistencyGroup consistencyGroupField;
 
-		/// <remarks/>
-		public string name
+        private ClusterType clusterField;
+
+        private TagWithIdAndNameType[] tagField;
+
+        private GuestType guestField;
+
+        /// <remarks/>
+        public string name
         {
             get { return this.nameField; }
             set { this.nameField = value; }
@@ -281,8 +307,8 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("networkInfo", typeof (ServerTypeNetworkInfo))]
-        [System.Xml.Serialization.XmlElementAttribute("nic", typeof (ServerTypeNic))]
+        [System.Xml.Serialization.XmlElementAttribute("networkInfo", typeof(ServerTypeNetworkInfo))]
+        [System.Xml.Serialization.XmlElementAttribute("nic", typeof(ServerTypeNic))]
         public object Item
         {
             get { return this.itemField; }
@@ -390,12 +416,46 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
             set { this.drsEligibleField = value; }
         }
 
-		/// <remarks/>
-		public consistencyGroup consistencyGroup
-	    {
-			get { return this.consistencyGroupField; }
-			set { this.consistencyGroupField = value; }
-		}
+        /// <remarks/>
+        public consistencyGroup consistencyGroup
+        {
+            get { return this.consistencyGroupField; }
+            set { this.consistencyGroupField = value; }
+        }
+
+        /// <remarks/>
+        public ClusterType cluster
+        {
+            get { return this.clusterField; }
+            set { this.clusterField = value; }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("tag")]
+        public TagWithIdAndNameType[] tag
+        {
+            get
+            {
+                return this.tagField;
+            }
+            set
+            {
+                this.tagField = value;
+            }
+        }
+
+        /// <remarks/>
+        public GuestType guest
+        {
+            get
+            {
+                return this.guestField;
+            }
+            set
+            {
+                this.guestField = value;
+            }
+        }
     }
 
     /// <remarks/>
@@ -845,8 +905,8 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("network", typeof (DeployServerTypeNetwork))]
-        [System.Xml.Serialization.XmlElementAttribute("networkInfo", typeof (DeployServerTypeNetworkInfo))]
+        [System.Xml.Serialization.XmlElementAttribute("network", typeof(DeployServerTypeNetwork))]
+        [System.Xml.Serialization.XmlElementAttribute("networkInfo", typeof(DeployServerTypeNetworkInfo))]
         public object Item
         {
             get { return this.itemField; }
@@ -866,7 +926,7 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
             get { return this.secondaryDnsField; }
             set { this.secondaryDnsField = value; }
         }
-        
+
         /// <remarks/>
         public string ipv4Gateway
         {
@@ -964,8 +1024,8 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         private NetworkIdOrPrivateIpv4ChoiceType itemElementNameField;
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("networkId", typeof (string))]
-        [System.Xml.Serialization.XmlElementAttribute("privateIpv4", typeof (string))]
+        [System.Xml.Serialization.XmlElementAttribute("networkId", typeof(string))]
+        [System.Xml.Serialization.XmlElementAttribute("privateIpv4", typeof(string))]
         [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemElementName")]
         public string Item
         {
@@ -1104,7 +1164,7 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
             set { this.nicIdField = value; }
         }
     }
-	 
+
 
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
@@ -1454,7 +1514,7 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
             }
         }
     }
-	
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
     [System.SerializableAttribute()]
@@ -2061,122 +2121,178 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
     {
     }
 
-	/// <remarks/>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-	[System.SerializableAttribute()]
-	[System.Diagnostics.DebuggerStepThroughAttribute()]
-	[System.ComponentModel.DesignerCategoryAttribute("code")]
-	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
-	[System.Xml.Serialization.XmlRootAttribute("consistencyGroup", Namespace = "urn:didata.com:api:cloud:types")]
-	public partial class consistencyGroup
-	{
-		/// <remarks/>
-		[System.Xml.Serialization.XmlAttributeAttribute()]
-		public string id;
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    [System.Xml.Serialization.XmlRootAttribute("consistencyGroup", Namespace = "urn:didata.com:api:cloud:types")]
+    public partial class consistencyGroup
+    {
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string id;
 
-		/// <remarks/>
-		[System.Xml.Serialization.XmlAttributeAttribute()]
-		public string name;
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string name;
 
-		/// <remarks/>
-		[System.Xml.Serialization.XmlAttributeAttribute()]
-		public string status;
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string status;
 
-		/// <remarks/>
-		[System.Xml.Serialization.XmlAttributeAttribute()]
-		public string serverRole;
-	}
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string serverRole;
+    }
 
-	/// 
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34283")]
-	[System.SerializableAttribute()]
-	[System.Diagnostics.DebuggerStepThroughAttribute()]
-	[System.ComponentModel.DesignerCategoryAttribute("code")]
-	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
-	[System.Xml.Serialization.XmlRootAttribute("editServerMetadata", Namespace = "urn:didata.com:api:cloud:types", IsNullable = true)]
-	public partial class editServerMetadata
-	{
-		private string nameField;
-		private string descriptionField;
-		private bool drsEligibleField;
-		private bool descriptionFieldSpecified;
-		private bool drsEligibleFieldSpecified;
-		private string idField;
-		/// 
-		public string name
-		{
-			get
-			{
-				return this.nameField;
-			}
-			set
-			{
-				this.nameField = value;
-			}
-		}
-		/// 
-		[System.Xml.Serialization.XmlElementAttribute(IsNullable = true)]
-		public string description
-		{
-			get
-			{
-				return this.descriptionField;
-			}
-			set
-			{
-				this.descriptionField = value;
-			}
-		}
-		/// 
-		public bool drsEligible
-		{
-			get
-			{
-				return this.drsEligibleField;
-			}
-			set
-			{
-				this.drsEligibleField = value;
-			}
-		}
-		/// 
-		[System.Xml.Serialization.XmlIgnoreAttribute()]
-		public bool drsEligibleSpecified
-		{
-			get
-			{
-				return this.drsEligibleFieldSpecified;
-			}
-			set
-			{
-				this.drsEligibleFieldSpecified = value;
-			}
-		}
-		/// 
-		[System.Xml.Serialization.XmlIgnoreAttribute()]
-		public bool descriptionSpecified
-		{
-			get
-			{
-				return this.descriptionFieldSpecified;
-			}
-			set
-			{
-				this.descriptionFieldSpecified = value;
-			}
-		}
-		/// 
-		[System.Xml.Serialization.XmlAttributeAttribute()]
-		public string id
-		{
-			get
-			{
-				return this.idField;
-			}
-			set
-			{
-				this.idField = value;
-			}
-		}
-	}
+    /// 
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34283")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    [System.Xml.Serialization.XmlRootAttribute("editServerMetadata", Namespace = "urn:didata.com:api:cloud:types", IsNullable = true)]
+    public partial class editServerMetadata
+    {
+        private string nameField;
+        private string descriptionField;
+        private bool drsEligibleField;
+        private bool descriptionFieldSpecified;
+        private bool drsEligibleFieldSpecified;
+        private string idField;
+        /// 
+        public string name
+        {
+            get
+            {
+                return this.nameField;
+            }
+            set
+            {
+                this.nameField = value;
+            }
+        }
+        /// 
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable = true)]
+        public string description
+        {
+            get
+            {
+                return this.descriptionField;
+            }
+            set
+            {
+                this.descriptionField = value;
+            }
+        }
+        /// 
+        public bool drsEligible
+        {
+            get
+            {
+                return this.drsEligibleField;
+            }
+            set
+            {
+                this.drsEligibleField = value;
+            }
+        }
+        /// 
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool drsEligibleSpecified
+        {
+            get
+            {
+                return this.drsEligibleFieldSpecified;
+            }
+            set
+            {
+                this.drsEligibleFieldSpecified = value;
+            }
+        }
+        /// 
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool descriptionSpecified
+        {
+            get
+            {
+                return this.descriptionFieldSpecified;
+            }
+            set
+            {
+                this.descriptionFieldSpecified = value;
+            }
+        }
+        /// 
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    public partial class TagWithIdAndNameType
+    {
+
+        private string tagKeyNameField;
+
+        private string valueField;
+
+        private string tagKeyIdField;
+
+        /// <remarks/>
+        public string tagKeyName
+        {
+            get
+            {
+                return this.tagKeyNameField;
+            }
+            set
+            {
+                this.tagKeyNameField = value;
+            }
+        }
+
+        /// <remarks/>
+        public string value
+        {
+            get
+            {
+                return this.valueField;
+            }
+            set
+            {
+                this.valueField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string tagKeyId
+        {
+            get
+            {
+                return this.tagKeyIdField;
+            }
+            set
+            {
+                this.tagKeyIdField = value;
+            }
+        }
+    }
 }
