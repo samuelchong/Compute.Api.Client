@@ -217,8 +217,6 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         private string descriptionField;
 
-        private OperatingSystemType operatingSystemField;
-
         private CpuType cpuField;
 
         private uint memoryGbField;
@@ -244,8 +242,6 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         private string stateField;
 
         private ProgressType progressField;
-
-        private VmwareToolsType vmwareToolsField;
 
         private VirtualHardwareType virtualHardwareField;
 
@@ -275,13 +271,6 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         {
             get { return this.descriptionField; }
             set { this.descriptionField = value; }
-        }
-
-        /// <remarks/>
-        public OperatingSystemType operatingSystem
-        {
-            get { return this.operatingSystemField; }
-            set { this.operatingSystemField = value; }
         }
 
         /// <remarks/>
@@ -377,13 +366,6 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         {
             get { return this.progressField; }
             set { this.progressField = value; }
-        }
-
-        /// <remarks/>
-        public VmwareToolsType vmwareTools
-        {
-            get { return this.vmwareToolsField; }
-            set { this.vmwareToolsField = value; }
         }
 
         /// <remarks/>
