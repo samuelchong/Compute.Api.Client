@@ -1885,7 +1885,7 @@
         {
             return
                 new Uri(
-                    string.Format(MCP2_3_PREFIX + "{0}/infrastructure/operatingSystem?datacenterId={1}", orgId, 
+                    string.Format(MCP2_4_PREFIX + "{0}/infrastructure/operatingSystem?datacenterId={1}", orgId, 
                         dataCenterId), UriKind.Relative);
         }
 
