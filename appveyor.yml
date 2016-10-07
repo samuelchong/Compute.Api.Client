@@ -6,7 +6,7 @@ before_build:
 build:
   project: ComputeClient\ComputeClient.sln
   publish_nuget: true
-  
+
 after_build:
 - ps: Generate-Documentation.ps1
 
@@ -15,7 +15,7 @@ deploy:
   server: https://ci.appveyor.com/nuget/tonybaloney-006rwlljmlay
   api_key:
     secure: gr5U24o6qj2/SvRX0JOfdQjxT85C0dCAAVWeVT2Aiu0=
-	
+
 on_success:
   - git config --global user.email "%APPVEYOR_REPO_COMMIT_AUTHOR_EMAIL%"
   - git config --global user.name "%APPVEYOR_REPO_COMMIT_AUTHOR%"
