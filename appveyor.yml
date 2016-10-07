@@ -10,6 +10,10 @@ build:
 after_build:
 - ps: .\Generate-Documentation.ps1
 
+environment:
+  access_token:
+    secure: O/sXyJYB0lM0WHQmuoG1LjfB/w9pwx8Pt3HmS13N9MXP7UqbY4/aJvJwemP0tlp2
+
 deploy:
 - provider: NuGet
   server: https://ci.appveyor.com/nuget/tonybaloney-006rwlljmlay
