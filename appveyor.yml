@@ -1,0 +1,27 @@
+version: 3.3.{build}
+configuration: Release
+before_build:
+- ps: ComputeClient\UpdateAssemblyInfo.AppVeyor.ps1
+
+build:
+  project: ComputeClient\ComputeClient.sln
+  publish_nuget: true
+  
+after_build:
+- ps: Generate-Documentation.ps1
+
+deploy:
+- provider: NuGet
+  server: https://ci.appveyor.com/nuget/tonybaloney-006rwlljmlay
+  api_key:
+    secure: gr5U24o6qj2/SvRX0JOfdQjxT85C0dCAAVWeVT2Aiu0=
+	
+on_success:
+  - git config --global user.email "%APPVEYOR_REPO_COMMIT_AUTHOR_EMAIL%"
+  - git config --global user.name "%APPVEYOR_REPO_COMMIT_AUTHOR%"
+  - git config --global credential.helper store
+  - git config --global push.default simple
+  - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:access_token):x-oauth-basic@github.com`n"
+  - git add docs/
+  - IF %APPVEYOR_REPO_BRANCH% == "master" (git commit -m "Updated docs [skip appveyor]")
+  - IF %APPVEYOR_REPO_BRANCH% == "master" (git push origin HEAD:%APPVEYOR_REPO_BRANCH%)
