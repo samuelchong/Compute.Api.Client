@@ -8,7 +8,7 @@ build:
   publish_nuget: true
 
 after_build:
-- ps: Generate-Documentation.ps1
+- ps: .\Generate-Documentation.ps1
 
 deploy:
 - provider: NuGet
