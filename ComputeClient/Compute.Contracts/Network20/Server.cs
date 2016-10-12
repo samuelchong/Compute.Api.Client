@@ -812,6 +812,9 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         public string imageId;
 
         /// <remarks/>
+        public string clusterId;
+
+        /// <remarks/>
         public bool start;
 
         /// <remarks/>
@@ -847,9 +850,6 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         /// <remarks/>
         public string microsoftTimeZone;
-
-        /// <remarks/>
-        public string clusterId;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("tagById")]
