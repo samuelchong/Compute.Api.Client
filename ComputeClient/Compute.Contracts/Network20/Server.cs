@@ -427,6 +427,7 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         }
 
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("guest")]
         public GuestType guest
         {
             get
@@ -801,135 +802,62 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
     public partial class DeployServerType
     {
 
-        private string nameField;
-
-        private string descriptionField;
-
-        private string imageIdField;
-
-        private bool startField;
-
-        private string administratorPasswordField;
-
-        private DeployServerTypeCpu cpuField;
-
-        private uint memoryGbField;
-
-        private bool memoryGbFieldSpecified;
-
-        private object itemField;
-
-        private string primaryDnsField;
-
-        private string secondaryDnsField;
-
-        private string ipv4GatewayField;
-
-        private DeployServerTypeDisk[] diskField;
-
-        private string microsoftTimeZoneField;
+        /// <remarks/>
+        public string name;
 
         /// <remarks/>
-        public string name
-        {
-            get { return this.nameField; }
-            set { this.nameField = value; }
-        }
+        public string description;
 
         /// <remarks/>
-        public string description
-        {
-            get { return this.descriptionField; }
-            set { this.descriptionField = value; }
-        }
+        public string imageId;
 
         /// <remarks/>
-        public string imageId
-        {
-            get { return this.imageIdField; }
-            set { this.imageIdField = value; }
-        }
+        public bool start;
 
         /// <remarks/>
-        public bool start
-        {
-            get { return this.startField; }
-            set { this.startField = value; }
-        }
+        public string administratorPassword;
 
         /// <remarks/>
-        public string administratorPassword
-        {
-            get { return this.administratorPasswordField; }
-            set { this.administratorPasswordField = value; }
-        }
+        public DeployServerTypeCpu cpu;
 
         /// <remarks/>
-        public DeployServerTypeCpu cpu
-        {
-            get { return this.cpuField; }
-            set { this.cpuField = value; }
-        }
-
-        /// <remarks/>
-        public uint memoryGb
-        {
-            get { return this.memoryGbField; }
-            set { this.memoryGbField = value; }
-        }
+        public uint memoryGb;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool memoryGbSpecified
-        {
-            get { return this.memoryGbFieldSpecified; }
-            set { this.memoryGbFieldSpecified = value; }
-        }
+        public bool memoryGbSpecified;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("network", typeof(DeployServerTypeNetwork))]
         [System.Xml.Serialization.XmlElementAttribute("networkInfo", typeof(DeployServerTypeNetworkInfo))]
-        public object Item
-        {
-            get { return this.itemField; }
-            set { this.itemField = value; }
-        }
+        public object Item;
 
         /// <remarks/>
-        public string primaryDns
-        {
-            get { return this.primaryDnsField; }
-            set { this.primaryDnsField = value; }
-        }
+        public string primaryDns;
 
         /// <remarks/>
-        public string secondaryDns
-        {
-            get { return this.secondaryDnsField; }
-            set { this.secondaryDnsField = value; }
-        }
+        public string secondaryDns;
 
         /// <remarks/>
-        public string ipv4Gateway
-        {
-            get { return this.ipv4GatewayField; }
-            set { this.ipv4GatewayField = value; }
-        }
+        public string ipv4Gateway;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("disk")]
-        public DeployServerTypeDisk[] disk
-        {
-            get { return this.diskField; }
-            set { this.diskField = value; }
-        }
+        public DeployServerTypeDisk[] disk;
 
         /// <remarks/>
-        public string microsoftTimeZone
-        {
-            get { return this.microsoftTimeZoneField; }
-            set { this.microsoftTimeZoneField = value; }
-        }
+        public string microsoftTimeZone;
+
+        /// <remarks/>
+        public string clusterId;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("tagById")]
+        public ApplyTagByIdType[] tagById;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("tag")]
+        public ApplyTagType[] tag;
     }
 
     /// <remarks/>

@@ -204,7 +204,7 @@
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri DeployServerOnNetworkDomain(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_3_PREFIX + "{0}/server/deployServer", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_4_PREFIX + "{0}/server/deployServer", orgId), UriKind.Relative);
         }
 
         /// <summary>Get the relative URI for the CaaS API action that retrieves a list of all data centres available for use by the specified organisation.</summary>
@@ -1763,7 +1763,7 @@
         /// <returns>	An URI for the mcp2.0 deploy server api. </returns>
         public static Uri DeployMCP20Server(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_3_PREFIX + "{0}/server/deployServer", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_4_PREFIX + "{0}/server/deployServer", orgId), UriKind.Relative);
         }
 
         /// <summary>	Clean server via MCP 2.0 api </summary>
