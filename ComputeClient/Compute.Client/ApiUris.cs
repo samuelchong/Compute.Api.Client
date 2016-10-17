@@ -146,7 +146,7 @@
         public static Uri AddNic(Guid orgId)
         {
             return new Uri(
-                String.Format(MCP2_3_PREFIX + "{0}/server/addNic", orgId), UriKind.Relative);
+                String.Format(MCP2_4_PREFIX + "{0}/server/addNic", orgId), UriKind.Relative);
         }
 
         /// <summary>	Removes a NIC from a server </summary>
@@ -164,7 +164,7 @@
         /// <returns>	An URI. </returns>
         public static Uri ListNics(Guid orgId, Guid vlanId)
         {
-            return new Uri(string.Format(MCP2_3_PREFIX + "{0}/server/nic?vlanId={1}", orgId, vlanId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_4_PREFIX + "{0}/server/nic?vlanId={1}", orgId, vlanId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for Botify NIC IP change.</summary>
