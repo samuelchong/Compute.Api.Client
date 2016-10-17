@@ -139,5 +139,9 @@
 		/// <returns>The async type of <see cref="ResponseType"/></returns>
 		Task<ResponseType> EditServerMetadata(editServerMetadata editServerMetadata);
 
+        /// <summary>Move server to cluster</summary>
+		/// <param name="moveServer">move server model.</param>
+		/// <returns>The async type of <see cref="ResponseType"/></returns>
+        Task<ResponseType> MoveServer(MoveServerType moveServer);
     }
 }
