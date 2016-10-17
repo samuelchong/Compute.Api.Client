@@ -2205,4 +2205,21 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
             }
         }
     }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    [System.Xml.Serialization.XmlRootAttribute("moveServer", Namespace = "urn:didata.com:api:cloud:types", IsNullable = false)]
+    public partial class MoveServerType
+    {
+        /// <remarks/>
+        public string targetClusterId;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string id;
+    }
 }
