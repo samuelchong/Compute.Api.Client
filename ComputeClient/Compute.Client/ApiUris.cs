@@ -1774,6 +1774,14 @@
             return new Uri(string.Format(MCP2_3_PREFIX + "{0}/server/cleanServer", orgId), UriKind.Relative);
         }
 
+        /// <summary>Move Server to Cluster </summary>
+        /// <param name="orgId">	The org Id. </param>
+        /// <returns>	An URI for move server to cluster api. </returns>
+        public static Uri MoveServerToCluster(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_4_PREFIX + "{0}/server/moveServer", orgId), UriKind.Relative);
+        }
+
         /// <summary>Returns the relative URI of the REST request for usage summary.</summary>
         /// <param name="orgId">The organization id.</param>
         /// <param name="startDate">The Start Date</param>
