@@ -1874,7 +1874,7 @@
         /// <returns>	Url endpoint </returns>
         public static Uri EditMcp2CustomerImageMetadata(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_3_PREFIX + "{0}/image/editImageMetadata", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_4_PREFIX + "{0}/image/editImageMetadata", orgId), UriKind.Relative);
         }
 
         /// <summary>	Get MCP 2 operating systems</summary>
