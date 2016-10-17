@@ -530,10 +530,6 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool supportsBackup;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool wildcard;
     }
 
     /// <remarks/>
