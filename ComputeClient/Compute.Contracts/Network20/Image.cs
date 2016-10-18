@@ -30,8 +30,6 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         private string descriptionField;
 
-        private OperatingSystemType operatingSystemField;
-
         private CpuType cpuField;
 
         private uint memoryGbField;
@@ -62,13 +60,6 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         {
             get { return this.descriptionField; }
             set { this.descriptionField = value; }
-        }
-
-        /// <remarks/>
-        public OperatingSystemType operatingSystem
-        {
-            get { return this.operatingSystemField; }
-            set { this.operatingSystemField = value; }
         }
 
         /// <remarks/>
