@@ -314,7 +314,7 @@ namespace DD.CBU.Compute.Api.Client.Server20
         /// <returns>The <see cref="Task"/>.</returns>
         public async Task<ResponseType> MoveServer(MoveServerType moveServer)
         {
-            return await _apiClient.PostAsync<MoveServerType, ResponseType>(ApiUris.RemoveDisk(_apiClient.OrganizationId), moveServer);
+            return await _apiClient.PostAsync<MoveServerType, ResponseType>(ApiUris.MoveServerToCluster(_apiClient.OrganizationId), moveServer);
         }
     }
 }
