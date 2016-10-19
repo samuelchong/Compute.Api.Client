@@ -316,5 +316,15 @@ namespace DD.CBU.Compute.Api.Client.Server20
         {
             return await _apiClient.PostAsync<MoveServerType, ResponseType>(ApiUris.MoveServerToCluster(_apiClient.OrganizationId), moveServer);
         }
+
+        /// <summary>Deploys an un customized server to MCP 2.0 data centers </summary>
+        /// <param name="serverDetails">Details of the server to be deployed</param>
+        /// <returns>Response containing the server id</returns>
+        public async Task<ResponseType> DeployUncustomizedServer(DeployUncustomizedServerType serverDetails)
+        {
+            return await _apiClient.PostAsync<DeployUncustomizedServerType, ResponseType>(
+                ApiUris.DeployUncustomizedServer(_apiClient.OrganizationId),
+                serverDetails);
+        }
     }
 }

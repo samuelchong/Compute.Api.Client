@@ -143,5 +143,10 @@
 		/// <param name="moveServer">move server model.</param>
 		/// <returns>The async type of <see cref="ResponseType"/></returns>
         Task<ResponseType> MoveServer(MoveServerType moveServer);
+
+        /// <summary>Deploys an un customized server to MCP 2.0 data centers </summary>
+        /// <param name="serverDetails">Details of the server to be deployed</param>
+        /// <returns>Response containing the server id</returns>
+        Task<ResponseType> DeployUncustomizedServer(DeployUncustomizedServerType serverDetails);
     }
 }

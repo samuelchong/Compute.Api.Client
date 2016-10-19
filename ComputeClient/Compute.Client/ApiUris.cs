@@ -2264,5 +2264,13 @@
 		{
 			return new Uri(string.Format(MCP2_3_PREFIX + "{0}/consistencyGroup/expandJournal", orgId), UriKind.Relative);
 		}
-	}
+
+        /// <summary>	Deploy the uncustomized server via MCP 2.0 api </summary>
+        /// <param name="orgId">	The org Id. </param>
+        /// <returns>	An URI for the mcp2.0 deploy server api. </returns>
+        public static Uri DeployUncustomizedServer(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_4_PREFIX + "{0}/server/deployUncustomizedServer", orgId), UriKind.Relative);
+        }
+    }
 }

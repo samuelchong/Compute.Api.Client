@@ -254,6 +254,7 @@
     <Compile Include="Server\DeployedServersWithDisks.cs" />
     <Compile Include="Server\DeployedServersWithSoftwareLabels.cs" />
     <Compile Include="Server\DeployedServersWithStatus.cs" />
+    <Compile Include="Network20\DeployUncustomizedServerType.cs" />
     <Compile Include="Server\DeployedServerType.cs" />
     <Compile Include="Server\DeployedServerWithDisksType.cs" />
     <Compile Include="Server\DeployedServerWithSoftwareLabelsType.cs" />
