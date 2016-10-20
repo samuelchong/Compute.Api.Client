@@ -853,7 +853,7 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
     public partial class operatingSystems
     {
 
-        private OperatingSystemType[] operatingSystemField;
+        private OperatingSystemDetailType[] operatingSystemField;
 
         private int pageNumberField;
 
@@ -873,7 +873,7 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("operatingSystem")]
-        public OperatingSystemType[] operatingSystem
+        public OperatingSystemDetailType[] operatingSystem
         {
             get { return this.operatingSystemField; }
             set { this.operatingSystemField = value; }
