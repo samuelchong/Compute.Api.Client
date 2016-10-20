@@ -1088,7 +1088,7 @@
 
         #endregion // Backup URIs
 
-        #region Import and Export Customer Image API
+        #region Import and Export Customer Image API 0.9
 
         /// <summary>Gets the relative URI for the CaaS API action that retrieves a list of OVF Packages</summary>
         /// <param name="orgId">The organization id</param>
@@ -1162,6 +1162,18 @@
         public static Uri GetCustomerImageExportHistory(Guid organizationId, int count = 20)
         {
             return new Uri(string.Format(MCP1_0_PREFIX + "{0}/imageExportHistory?count=", organizationId, count), UriKind.Relative);
+        }
+
+        #endregion
+
+        #region Import and Export Customer Image API 2.X
+
+        /// <summary>Gets the relative URI for the CaaS API action that POST a request to import a MCP 2.0 customer image</summary>
+        /// <param name="orgId">The organization id</param>
+        /// <returns>Returns the relative URI of the REST request for importing a MCP 2.0 customer image</returns>
+        public static Uri ImportMcp2CustomerImage(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_4_PREFIX + "{0}/image/importImage", orgId), UriKind.Relative);
         }
 
         #endregion

@@ -1,4 +1,6 @@
-﻿namespace DD.CBU.Compute.Api.Client.Interfaces.Server20
+﻿using DD.CBU.Compute.Api.Contracts.Image;
+
+namespace DD.CBU.Compute.Api.Client.Interfaces.Server20
 {
     using System.Collections.Generic;
     using System.Threading.Tasks; 
@@ -73,5 +75,16 @@
         /// The <see cref="Task"/>.
         /// </returns>	
         Task<ResponseType> EditCustomerImageMetadata(ImageMetadataType imageMetadata);
+
+        /// <summary>
+		/// The import MCP 2.0 customer image to a user-manageable Cluster in a Data Center location.
+		/// </summary>
+		/// <param name="importImage">
+		/// The import image model.
+		/// </param>
+		/// <returns>
+		/// The <see cref="Task"/>.
+		/// </returns>
+        Task<ResponseType> ImportCustomerImage(ImportImageType importImage);
     }
 }

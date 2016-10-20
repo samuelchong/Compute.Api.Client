@@ -1,4 +1,7 @@
-﻿namespace DD.CBU.Compute.Api.Client.Server20
+﻿using DD.CBU.Compute.Api.Contracts.Image;
+using DD.CBU.Compute.Api.Contracts.Server;
+
+namespace DD.CBU.Compute.Api.Client.Server20
 {
     using System;
     using System.Collections.Generic;
@@ -109,6 +112,23 @@
         {
             return await _apiClient.PostAsync<ImageMetadataType, ResponseType>(
             ApiUris.EditMcp2CustomerImageMetadata(_apiClient.OrganizationId), imageMetadata);
+        }
+
+        /// <summary>
+		/// The import MCP 2.0 customer image to a user-manageable Cluster in a Data Center location.
+		/// </summary>
+		/// <param name="importImage">
+		/// The import image model.
+		/// </param>
+		/// <returns>
+		/// The <see cref="Task"/>.
+		/// </returns>
+		public async Task<ResponseType> ImportCustomerImage(ImportImageType importImage)
+        {
+            return
+                await
+                    _apiClient.PostAsync<ImportImageType, ResponseType>(
+                        ApiUris.ImportMcp2CustomerImage(_apiClient.OrganizationId), importImage);
         }
     }
 }
