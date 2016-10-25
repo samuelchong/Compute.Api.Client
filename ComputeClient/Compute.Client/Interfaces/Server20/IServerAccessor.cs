@@ -148,5 +148,12 @@
         /// <param name="serverDetails">Details of the server to be deployed</param>
         /// <returns>Response containing the server id</returns>
         Task<ResponseType> DeployUncustomizedServer(DeployUncustomizedServerType serverDetails);
-    }
+
+		/// <summary>
+		/// Clone journal
+		/// </summary>
+		/// <param name="cloneServerType">Clone Server type.</param>
+		/// <returns>The <see cref="ResponseType"/></returns>
+		Task<ResponseType> CloneServer(CloneServerType cloneServerType);
+	}
 }
