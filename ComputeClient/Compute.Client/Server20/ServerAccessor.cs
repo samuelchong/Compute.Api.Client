@@ -326,5 +326,15 @@ namespace DD.CBU.Compute.Api.Client.Server20
                 ApiUris.DeployUncustomizedServer(_apiClient.OrganizationId),
                 serverDetails);
         }
-    }
+
+		/// <summary>
+		/// Clone journal
+		/// </summary>
+		/// <param name="cloneServerType">Clone Server type.</param>
+		/// <returns>The <see cref="ResponseType"/></returns>
+		public async Task<ResponseType> CloneServer(CloneServerType cloneServerType)
+		{
+			return await _apiClient.PostAsync<CloneServerType, ResponseType>(ApiUris.CloneServer(_apiClient.OrganizationId), cloneServerType);
+		}
+	}
 }

@@ -478,30 +478,29 @@
             return new Uri(string.Format(MCP1_0_PREFIX + "{0}/server/{1}?updateVMwareTools", orgId, serverId), UriKind.Relative);
         }
 
+		/// <summary>Initiates a clone of a server to create a Customer Image</summary>
+		/// <param name="orgId">The organization id</param>
+		/// <param name="serverId">The server id</param>
+		/// <param name="imageName">The image Name.</param>
+		/// <param name="imageDesc">The image Desc.</param>
+		/// <returns>Returns the relative URI of the REST request for rebooting the server</returns>
+		public static Uri CloneServerToCustomerImage(Guid orgId, string serverId, string imageName, string imageDesc)
+		{
+			Uri uri;
+			if (string.IsNullOrEmpty(imageDesc))
+				uri = new Uri(string.Format(MCP1_0_PREFIX + "{0}/server/{1}?clone={2}", orgId, serverId, imageName), UriKind.Relative);
+			else
+				uri = new Uri(string.Format(MCP1_0_PREFIX + "{0}/server/{1}?clone={2}&desc={3}", orgId, serverId, imageName, imageDesc),
+					UriKind.Relative);
+			return uri;
+		}
 
-        /// <summary>Initiates a clone of a server to create a Customer Image</summary>
-        /// <param name="orgId">The organization id</param>
-        /// <param name="serverId">The server id</param>
-        /// <param name="imageName">The image Name.</param>
-        /// <param name="imageDesc">The image Desc.</param>
-        /// <returns>Returns the relative URI of the REST request for rebooting the server</returns>
-        public static Uri CloneServerToCustomerImage(Guid orgId, string serverId, string imageName, string imageDesc)
-        {
-            Uri uri;
-            if (string.IsNullOrEmpty(imageDesc))
-                uri = new Uri(string.Format(MCP1_0_PREFIX + "{0}/server/{1}?clone={2}", orgId, serverId, imageName), UriKind.Relative);
-            else
-                uri = new Uri(string.Format(MCP1_0_PREFIX + "{0}/server/{1}?clone={2}&desc={3}", orgId, serverId, imageName, imageDesc), 
-                    UriKind.Relative);
-            return uri;
-        }
-
-        /// <summary>Change server disk speed</summary>
-        /// <param name="orgId">The organization id</param>
-        /// <param name="serverId">The server id</param>
-        /// <param name="diskId">The disk id</param>
-        /// <returns>Returns the relative URI of the REST request for change server disk size the server</returns>
-        public static Uri ChangeServerDiskSpeed(Guid orgId, string serverId, string diskId)
+		/// <summary>Change server disk speed</summary>
+		/// <param name="orgId">The organization id</param>
+		/// <param name="serverId">The server id</param>
+		/// <param name="diskId">The disk id</param>
+		/// <returns>Returns the relative URI of the REST request for change server disk size the server</returns>
+		public static Uri ChangeServerDiskSpeed(Guid orgId, string serverId, string diskId)
         {
             return new Uri(string.Format(MCP1_0_PREFIX + "{0}/server/{1}/disk/{2}/changeSpeed", orgId, serverId, diskId), UriKind.Relative);
         }
@@ -2291,5 +2290,13 @@
         {
             return new Uri(string.Format(MCP2_4_PREFIX + "{0}/server/deployUncustomizedServer", orgId), UriKind.Relative);
         }
-    }
+
+		/// <summary>Returns the relative URI of the REST request for clone server.</summary>
+		/// <param name="orgId">The organization id.</param>
+		/// <returns>The <see cref="Uri"/>.</returns>
+		public static Uri CloneServer(Guid orgId)
+		{
+			return new Uri(string.Format(MCP2_4_PREFIX + "{0}/server/cloneServer", orgId), UriKind.Relative);
+		}
+	}
 }
