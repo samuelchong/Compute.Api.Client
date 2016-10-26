@@ -111,7 +111,7 @@ namespace DD.CBU.Compute.Api.Client.Server20
         public async Task<ResponseType> EditCustomerImageMetadata(ImageMetadataType imageMetadata)
         {
             return await _apiClient.PostAsync<ImageMetadataType, ResponseType>(
-            ApiUris.EditMcp2CustomerImageMetadata(_apiClient.OrganizationId), imageMetadata);
+            ApiUris.EditMcp2CustomerImageMetadata(_apiClient.OrganizationId), imageMetadata);  
         }
 
         /// <summary>
@@ -130,5 +130,23 @@ namespace DD.CBU.Compute.Api.Client.Server20
                     _apiClient.PostAsync<ImportImageType, ResponseType>(
                         ApiUris.ImportMcp2CustomerImage(_apiClient.OrganizationId), importImage);
         }
+
+        /// <summary>
+        /// The export MCP 2.0 customer image.
+        /// </summary>
+        /// <param name="exportImage">
+        /// The export image model.
+        /// </param>
+        /// <returns>
+        /// The <see cref="Task"/>.
+        /// </returns>
+        public async Task<ResponseType> ExportCustomerImage(ExportImageType exportImage)
+        {
+            return
+                await
+                    _apiClient.PostAsync<ExportImageType, ResponseType>(
+                        ApiUris.ExportCustomerImage(_apiClient.OrganizationId), exportImage);
+        }
+
     }
 }

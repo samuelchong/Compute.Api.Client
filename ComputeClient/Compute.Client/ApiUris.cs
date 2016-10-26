@@ -1176,6 +1176,13 @@
             return new Uri(string.Format(MCP2_4_PREFIX + "{0}/image/importImage", orgId), UriKind.Relative);
         }
 
+        /// <summary>Gets the relative URI for the CaaS API action that POST a request to export a MCP 2.0 customer image</summary>
+        /// <param name="orgId">The organization id</param>
+        /// <returns>Returns the relative URI of the REST request for exporting a MCP 2.0 customer image</returns>
+        public static Uri ExportMcp2CustomerImage(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_4_PREFIX + "{0}/image/exportImage", orgId), UriKind.Relative);
+        }
         #endregion
 
         #region VIP

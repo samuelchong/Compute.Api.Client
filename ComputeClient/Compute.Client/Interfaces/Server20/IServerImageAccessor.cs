@@ -86,5 +86,16 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Server20
 		/// The <see cref="Task"/>.
 		/// </returns>
         Task<ResponseType> ImportCustomerImage(ImportImageType importImage);
+
+        /// <summary>
+        /// The export MCP 2.0 customer image.
+        /// </summary>
+        /// <param name="exportImage">
+        /// The export image model.
+        /// </param>
+        /// <returns>
+        /// The <see cref="Task"/>.
+        /// </returns>
+        Task<ResponseType> ExportCustomerImage(ExportImageType exportImage);
     }
 }

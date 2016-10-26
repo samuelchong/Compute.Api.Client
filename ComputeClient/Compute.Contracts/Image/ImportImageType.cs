@@ -27,7 +27,7 @@
 
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public ItemChoiceType ItemElementName;
+        public DatacenterClusterChoiceType ItemElementName;
 
         /// <remarks/>
         public bool guestOsCustomization;
@@ -41,7 +41,7 @@
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types", IncludeInSchema = false)]
-    public enum ItemChoiceType
+    public enum DatacenterClusterChoiceType
     {
 
         /// <remarks/>
