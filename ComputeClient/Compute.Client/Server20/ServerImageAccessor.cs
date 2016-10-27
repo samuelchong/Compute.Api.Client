@@ -145,7 +145,7 @@ namespace DD.CBU.Compute.Api.Client.Server20
             return
                 await
                     _apiClient.PostAsync<ExportImageType, ResponseType>(
-                        ApiUris.ExportCustomerImage(_apiClient.OrganizationId), exportImage);
+                        ApiUris.ExportMcp2CustomerImage(_apiClient.OrganizationId), exportImage);
         }
 
     }
