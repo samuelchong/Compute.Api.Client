@@ -1182,6 +1182,22 @@
         {
             return new Uri(string.Format(MCP2_4_PREFIX + "{0}/image/exportImage", orgId), UriKind.Relative);
         }
+
+        /// <summary>Gets the relative URI for the CaaS API action that retrieves a MCP 2.0 list of OVF Packages</summary>
+        /// <param name="orgId">The organization id</param>
+        /// <returns>Returns the relative URI of the REST request for getting the OVF Packages</returns>
+        public static Uri GetMcp2OvfPackage(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_4_PREFIX + "{0}/image/ovfPackage", orgId), UriKind.Relative);
+        }
+
+        /// <summary>Gets the status of Customer Image Exports that a particular ogranization has  in progress</summary>
+        /// <param name="orgId">The organization id</param>
+        /// <returns>Returns the relative URI of the REST request for getting the Customer Image Exports in progress</returns>
+        public static Uri GetMcp2CustomerImageExportsInProgress(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_4_PREFIX + "{0}/image/exportInProgress", orgId), UriKind.Relative);
+        }
         #endregion
 
         #region VIP

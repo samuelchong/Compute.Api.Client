@@ -1,10 +1,9 @@
-﻿using DD.CBU.Compute.Api.Contracts.Image;
-
-namespace DD.CBU.Compute.Api.Client.Interfaces.Server20
+﻿namespace DD.CBU.Compute.Api.Client.Interfaces.Server20
 {
-    using System.Collections.Generic;
     using System.Threading.Tasks; 
     using System;
+
+    using DD.CBU.Compute.Api.Contracts.Image20;
     using DD.CBU.Compute.Api.Contracts.Network20;
     using DD.CBU.Compute.Api.Contracts.Requests.Server20;
     using DD.CBU.Compute.Api.Contracts.General;
@@ -97,5 +96,22 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Server20
         /// The <see cref="Task"/>.
         /// </returns>
         Task<ResponseType> ExportCustomerImage(ExportImageType exportImage);
+
+        /// <summary>
+        /// This API call lists all OVF packages in the FTPS account of the calling organization.
+        /// </summary>
+        /// <returns>
+        /// The <see cref="Task"/>.
+        /// </returns>
+        Task<ovfPackages> GetOvfPackage();
+
+        /// <summary>
+        /// Get the status of Customer Image Exports that a particular ogranization has  in progress
+        /// </summary>
+        /// <param name="filteringOptions">Filtering options</param>
+        /// <param name="pagingOptions">Paging options</param>
+        /// <returns>Customer Image with Exports in progress status</returns>
+        Task<PagedResponse<ImageExportInProgressType>> GetCustomerImageExportsInProgress(
+            CustomerImageExportInProgressOptions filteringOptions, IPageableRequest pagingOptions);
     }
 }

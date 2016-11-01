@@ -94,10 +94,12 @@
     <Compile Include="Drs\ExpandJournalType.cs" />
     <Compile Include="EntityStatus.cs" />
     <Compile Include="Generic\IEntityStatusV2.cs" />
-    <Compile Include="Image\ExportImageType.cs" />
-    <Compile Include="Image\ImportImageType.cs" />
+    <Compile Include="Image20\ExportImageType.cs" />
+    <Compile Include="Image20\ImageExportsInProgress.cs" />
+    <Compile Include="Image20\ImportImageType.cs" />
     <Compile Include="Network20\FirewallOverride.cs" />
     <Compile Include="Network20\IpAddressList.cs" />
+    <Compile Include="Image20\OvfPackages.cs" />
     <Compile Include="Network20\PortList.cs" />
     <Compile Include="Network20\Tag.cs" />
     <Compile Include="Organization\TwoFactorAuthentication.cs" />
@@ -235,6 +237,7 @@
     <Compile Include="Requests\PageableRequest.cs" />
     <Compile Include="Requests\Server20\AntiAffinityRuleListOptions.cs" />
     <Compile Include="Requests\NullFilterOptions.cs" />
+    <Compile Include="Requests\Server20\CustomerImageExportInProgressOptions.cs" />
     <Compile Include="Requests\Server20\ServerCustomerImageListOptions.cs" />
     <Compile Include="Requests\Server20\ListNicsListOptions.cs" />
     <Compile Include="Requests\Server20\ServerOSImageListOptions.cs" />

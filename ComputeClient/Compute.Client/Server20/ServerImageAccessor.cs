@@ -1,12 +1,11 @@
-﻿using DD.CBU.Compute.Api.Contracts.Image;
-using DD.CBU.Compute.Api.Contracts.Server;
-
+﻿
 namespace DD.CBU.Compute.Api.Client.Server20
 {
     using System;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
+    using DD.CBU.Compute.Api.Contracts.Image20;
     using DD.CBU.Compute.Api.Client.Interfaces;
     using DD.CBU.Compute.Api.Client.Interfaces.Server20;
     using DD.CBU.Compute.Api.Contracts.General;
@@ -148,5 +147,41 @@ namespace DD.CBU.Compute.Api.Client.Server20
                         ApiUris.ExportMcp2CustomerImage(_apiClient.OrganizationId), exportImage);
         }
 
+        /// <summary>
+        /// This API call lists all OVF packages in the FTPS account of the calling organization.
+        /// </summary>
+        /// <returns>
+        /// The <see cref="Task"/>.
+        /// </returns>
+        public async Task<ovfPackages> GetOvfPackage()
+        {
+            return
+                await
+                    _apiClient.GetAsync<ovfPackages>(
+                        ApiUris.GetMcp2OvfPackage(_apiClient.OrganizationId));
+        }
+
+        /// <summary>
+        /// Get the status of Customer Image Exports that a particular ogranization has  in progress
+        /// </summary>
+        /// <param name="filteringOptions">Filtering options</param>
+        /// <param name="pagingOptions">Paging options</param>
+        /// <returns>Customer Image with Exports in progress status</returns>
+        public async Task<PagedResponse<ImageExportInProgressType>> GetCustomerImageExportsInProgress(CustomerImageExportInProgressOptions filteringOptions = null, IPageableRequest pagingOptions = null)
+        {
+            var response = await _apiClient.GetAsync<imageExportsInProgress>(
+                ApiUris.GetMcp2CustomerImageExportsInProgress(_apiClient.OrganizationId),
+                pagingOptions,
+                filteringOptions);
+
+            return new PagedResponse<ImageExportInProgressType>
+            {
+                items = response.imageExportInProgress,
+                totalCount = response.totalCountSpecified ? response.totalCount : (int?)null,
+                pageCount = response.pageCountSpecified ? response.pageCount : (int?)null,
+                pageNumber = response.pageNumberSpecified ? response.pageNumber : (int?)null,
+                pageSize = response.pageSizeSpecified ? response.pageSize : (int?)null
+            };
+        }
     }
 }
