@@ -24,9 +24,9 @@ namespace Compute.Client.UnitTests.Server20
 
             Assert.IsNotNull(response);
             Assert.AreEqual(1, response.Count());
-            Assert.AreEqual(2, response.First().serverSummary.Count());
-            Assert.AreEqual("681a6db2-9c7c-4d98-a0c4-7b3d7c1619ba", response.First().serverSummary.First().id);
-            Assert.AreEqual("5783e93f-5370-44fc-a772-cd3c29a2ecaa", response.First().serverSummary.Last().id);
+            Assert.AreEqual(2, response.First().server.Count());
+            Assert.AreEqual("681a6db2-9c7c-4d98-a0c4-7b3d7c1619ba", response.First().server.First().id);
+            Assert.AreEqual("5783e93f-5370-44fc-a772-cd3c29a2ecaa", response.First().server.Last().id);
         }
 
         [TestMethod]
@@ -43,9 +43,9 @@ namespace Compute.Client.UnitTests.Server20
 
             Assert.IsNotNull(response);
             Assert.AreEqual(1, response.Count());
-            Assert.AreEqual(2, response.First().serverSummary.Count());
-            Assert.AreEqual("681a6db2-9c7c-4d98-a0c4-7b3d7c1619ba", response.First().serverSummary.First().id);
-            Assert.AreEqual("5783e93f-5370-44fc-a772-cd3c29a2ecaa", response.First().serverSummary.Last().id);
+            Assert.AreEqual(2, response.First().server.Count());
+            Assert.AreEqual("681a6db2-9c7c-4d98-a0c4-7b3d7c1619ba", response.First().server.First().id);
+            Assert.AreEqual("5783e93f-5370-44fc-a772-cd3c29a2ecaa", response.First().server.Last().id);
         }
 
         [TestMethod]
@@ -62,9 +62,9 @@ namespace Compute.Client.UnitTests.Server20
 
             Assert.IsNotNull(response);
             Assert.AreEqual(1, response.Count());
-            Assert.AreEqual(2, response.First().serverSummary.Count());
-            Assert.AreEqual("681a6db2-9c7c-4d98-a0c4-7b3d7c1619ba", response.First().serverSummary.First().id);
-            Assert.AreEqual("5783e93f-5370-44fc-a772-cd3c29a2ecaa", response.First().serverSummary.Last().id);
+            Assert.AreEqual(2, response.First().server.Count());
+            Assert.AreEqual("681a6db2-9c7c-4d98-a0c4-7b3d7c1619ba", response.First().server.First().id);
+            Assert.AreEqual("5783e93f-5370-44fc-a772-cd3c29a2ecaa", response.First().server.Last().id);
         }
     }
 }

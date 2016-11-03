@@ -624,7 +624,7 @@
         /// <returns>The URL.</returns>
         public static Uri GetMcp2GetAntiAffinityRules(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_3_PREFIX + "{0}/server/antiAffinityRule", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_4_PREFIX + "{0}/server/antiAffinityRule", orgId), UriKind.Relative);
         }
 
         /// <summary>Gets the list anti affinity rule URL.</summary>
@@ -633,7 +633,7 @@
         /// <returns>The URL.</returns>
         public static Uri GetMcp2GetAntiAffinityRulesForServer(Guid orgId, Guid serverId)
         {
-            return new Uri(string.Format(MCP2_3_PREFIX + "{0}/server/antiAffinityRule?serverId={1}", orgId, serverId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_4_PREFIX + "{0}/server/antiAffinityRule?serverId={1}", orgId, serverId), UriKind.Relative);
         }
 
         /// <summary>Gets the list anti affinity rule URL.</summary>
@@ -642,7 +642,7 @@
         /// <returns>The URL.</returns>
         public static Uri GetMcp2GetAntiAffinityRulesForNetwork(Guid orgId, Guid networkId)
         {
-            return new Uri(string.Format(MCP2_3_PREFIX + "{0}/server/antiAffinityRule?networkId={1}", orgId, networkId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_4_PREFIX + "{0}/server/antiAffinityRule?networkId={1}", orgId, networkId), UriKind.Relative);
         }
 
         /// <summary>Gets the list anti affinity rule URL.</summary>
@@ -651,7 +651,7 @@
         /// <returns>The URL.</returns>
         public static Uri GetMcp2GetAntiAffinityRulesForNetworkDomain(Guid orgId, Guid networkDomainId)
         {
-            return new Uri(string.Format(MCP2_3_PREFIX + "{0}/server/antiAffinityRule?networkDomainId={1}", orgId, networkDomainId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_4_PREFIX + "{0}/server/antiAffinityRule?networkDomainId={1}", orgId, networkDomainId), UriKind.Relative);
         }
 
         #region FirewallRule

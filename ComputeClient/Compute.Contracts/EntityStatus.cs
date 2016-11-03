@@ -8,8 +8,6 @@ namespace DD.CBU.Compute.Api.Contracts
 
         public partial class NetworkDomainType : IEntityStatusV2 { }
 
-        public partial class AntiAffinityNetworkInfoTypeNic : IEntityStatusV2 { }
-
         public partial class AntiAffinityRuleType : IEntityStatusV2 { }
 
         public partial class IpAddressListType : IEntityStatusV2 { }
