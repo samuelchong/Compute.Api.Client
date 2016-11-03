@@ -202,16 +202,27 @@ namespace DD.CBU.Compute.Api.Client.Server20
                 throw new ArgumentNullException("vlanId");
             }
 
+            var nic = new VlanIdOrPrivateIpType
+            {
+                networkAdapter = networkAdapter
+            };
+
+            // Private IP takes priority over vlanId
+            // As Setting VlanId will make the api allocate the ip automatically ignoring the privateIp
+            if (!string.IsNullOrEmpty(privateIpv4))
+            {
+                nic.privateIpv4 = privateIpv4;
+            }
+            else
+            {
+                nic.vlanId = vlanId != null ? vlanId.ToString() : null;
+            }
+
             AddNicType addNicType = new AddNicType
             {
                 serverId = serverId.ToString(),
-                nic = new VlanIdOrPrivateIpType
-                {
-                    networkAdapter = networkAdapter,
-                    privateIpv4 = !string.IsNullOrEmpty(privateIpv4) ? privateIpv4 : null,
-                    vlanId = vlanId != null ? vlanId.ToString() : null
-                }
-            };
+                nic = nic
+            };           
 
             return await _apiClient.PostAsync<AddNicType, ResponseType>(ApiUris.AddNic(_apiClient.OrganizationId), addNicType);
         }
