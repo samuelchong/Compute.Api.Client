@@ -155,5 +155,10 @@
 		/// <param name="cloneServerType">Clone Server type.</param>
 		/// <returns>The <see cref="ResponseType"/></returns>
 		Task<ResponseType> CloneServer(CloneServerType cloneServerType);
-	}
+
+        /// <summary>Change the Network Adaptor of a NIC on a Cloud Server </summary>
+        /// <param name="changeNetworkAdapter">Details of the nic's network adapter to be updated</param>
+        /// <returns>	A standard CaaS response </returns>
+        Task<ResponseType> ChangeNicNetworkAdapter(changeNetworkAdapterType changeNetworkAdapter);
+    }
 }
