@@ -183,5 +183,28 @@ namespace DD.CBU.Compute.Api.Client.Server20
                 pageSize = response.pageSizeSpecified ? response.pageSize : (int?)null
             };
         }
-    }
+
+		/// <summary>
+		/// Get the customer images export history.
+		/// </summary>
+		/// <param name="filteringOptions">Filtering options</param>
+		/// <param name="pagingOptions">Paging options</param>
+		/// <returns>Customer Image with Exports in progress status</returns>
+		public async Task<PagedResponse<HistoricalImageExportType>> GetCustomerImagesExportHistory(CustomerImageExportHistoryOptions filteringOptions = null, IPageableRequest pagingOptions = null)
+		{
+			var response = await _apiClient.GetAsync<historicalImageExports>(
+				ApiUris.GetCustomerImageExportHistory(_apiClient.OrganizationId),
+				pagingOptions,
+				filteringOptions);
+
+			return new PagedResponse<HistoricalImageExportType>
+			{
+				items = response.historicalImageExport,
+				totalCount = response.totalCountSpecified ? response.totalCount : (int?)null,
+				pageCount = response.pageCountSpecified ? response.pageCount : (int?)null,
+				pageNumber = response.pageNumberSpecified ? response.pageNumber : (int?)null,
+				pageSize = response.pageSizeSpecified ? response.pageSize : (int?)null
+			};
+		}
+	}
 }

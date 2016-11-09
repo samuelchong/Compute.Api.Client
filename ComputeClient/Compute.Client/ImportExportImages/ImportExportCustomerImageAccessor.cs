@@ -75,20 +75,21 @@
 			return result.imageExport;
 		}
 
-		/// <summary>
-		/// The get customer images export history.
-		/// </summary>
-		/// <param name="count">
-		/// The count.
-		/// </param>
-		/// <returns>
-		/// The <see cref="Task"/>.
-		/// </returns>
-		public async Task<IEnumerable<ImageExportRecord>> GetCustomerImagesExportHistory(int count = 20)
+		///// <summary>
+		///// The get customer images export history.
+		///// </summary>
+		///// <param name="count">
+		///// The count.
+		///// </param>
+		///// <returns>
+		///// The <see cref="Task"/>.
+		///// </returns>
+		[Obsolete("Use IServerImageAccessor.GetCustomerImagesExportHistory instead")]
+		public async Task<IEnumerable<ImageExportRecord>> GetCustomerImagesExportHistory_09(int count = 20)
 		{
 			ImageExportHistory result =
 				await
-				_apiClient.GetAsync<ImageExportHistory>(ApiUris.GetCustomerImageExportHistory(_apiClient.OrganizationId, count));
+				_apiClient.GetAsync<ImageExportHistory>(ApiUris.GetCustomerImageExportHistory_09(_apiClient.OrganizationId, count));
 			return result.imageExportRecord;
 		}
 

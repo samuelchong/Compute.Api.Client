@@ -113,5 +113,14 @@
         /// <returns>Customer Image with Exports in progress status</returns>
         Task<PagedResponse<ImageExportInProgressType>> GetCustomerImageExportsInProgress(
             CustomerImageExportInProgressOptions filteringOptions, IPageableRequest pagingOptions);
-    }
+
+		/// <summary>
+		/// Get the customer images export history.
+		/// </summary>
+		/// <param name="filteringOptions">Filtering options</param>
+		/// <param name="pagingOptions">Paging options</param>
+		/// <returns>Customer Image with Exports in progress status</returns>
+		Task<PagedResponse<HistoricalImageExportType>> GetCustomerImagesExportHistory(
+			CustomerImageExportHistoryOptions filteringOptions, IPageableRequest pagingOptions);
+	}
 }

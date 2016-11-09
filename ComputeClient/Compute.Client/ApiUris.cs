@@ -1154,23 +1154,33 @@
             return new Uri(string.Format(MCP1_0_PREFIX + "{0}/imageExport", orgId), UriKind.Relative);
         }
 
-        /// <summary>Gets the customer image export history.</summary>
-        /// <param name="organizationId">The organization identifier.</param>
-        /// <param name="count">The number of results to return.</param>
-        /// <returns>The URI for the API.</returns>
-        public static Uri GetCustomerImageExportHistory(Guid organizationId, int count = 20)
-        {
-            return new Uri(string.Format(MCP1_0_PREFIX + "{0}/imageExportHistory?count=", organizationId, count), UriKind.Relative);
-        }
+		/// <summary>Gets the customer image export history.</summary>
+		/// <param name="organizationId">The organization identifier.</param>
+		/// <param name="count">The number of results to return.</param>
+		/// <returns>The URI for the API.</returns>
+		public static Uri GetCustomerImageExportHistory_09(Guid organizationId, int count = 20)
+		{
+			return new Uri(string.Format(MCP1_0_PREFIX + "{0}/imageExportHistory?count=", organizationId, count), UriKind.Relative);
+		}
 
-        #endregion
 
-        #region Import and Export Customer Image API 2.X
+		/// <summary>Gets the customer image export history.</summary>
+		/// <param name="organizationId">The organization identifier.</param>
+		/// <param name="count">The number of results to return.</param>
+		/// <returns>The URI for the API.</returns>
+		public static Uri GetCustomerImageExportHistory(Guid organizationId)
+		{
+			return new Uri(string.Format(MCP2_4_PREFIX + "{0}/image/exportHistory", organizationId), UriKind.Relative);
+		}
 
-        /// <summary>Gets the relative URI for the CaaS API action that POST a request to import a MCP 2.0 customer image</summary>
-        /// <param name="orgId">The organization id</param>
-        /// <returns>Returns the relative URI of the REST request for importing a MCP 2.0 customer image</returns>
-        public static Uri ImportMcp2CustomerImage(Guid orgId)
+		#endregion
+
+		#region Import and Export Customer Image API 2.X
+
+		/// <summary>Gets the relative URI for the CaaS API action that POST a request to import a MCP 2.0 customer image</summary>
+		/// <param name="orgId">The organization id</param>
+		/// <returns>Returns the relative URI of the REST request for importing a MCP 2.0 customer image</returns>
+		public static Uri ImportMcp2CustomerImage(Guid orgId)
         {
             return new Uri(string.Format(MCP2_4_PREFIX + "{0}/image/importImage", orgId), UriKind.Relative);
         }
