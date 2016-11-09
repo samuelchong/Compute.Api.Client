@@ -2222,4 +2222,21 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string id;
     }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    [System.Xml.Serialization.XmlRootAttribute("changeNetworkAdapter", Namespace = "urn:didata.com:api:cloud:types", IsNullable = false)]
+    public partial class changeNetworkAdapterType
+    {
+        /// <remarks/>
+        public string networkAdapter;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string nicId;
+    }
 }

@@ -2324,5 +2324,13 @@
 		{
 			return new Uri(string.Format(MCP2_4_PREFIX + "{0}/server/cloneServer", orgId), UriKind.Relative);
 		}
-	}
+
+        /// <summary>Change the Network Adaptor of a NIC on a Cloud Server</summary>
+        /// <param name="orgId">	The org Id. </param>
+        /// <returns>	An URI for Change the Network Adaptor of a NIC api. </returns>
+        public static Uri ChangeNicNetworkAdapter(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_4_PREFIX + "{0}/server/changeNetworkAdapter", orgId), UriKind.Relative);
+        }
+    }
 }

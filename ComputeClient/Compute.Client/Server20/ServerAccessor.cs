@@ -336,5 +336,13 @@ namespace DD.CBU.Compute.Api.Client.Server20
 		{
 			return await _apiClient.PostAsync<CloneServerType, ResponseType>(ApiUris.CloneServer(_apiClient.OrganizationId), cloneServerType);
 		}
-	}
+
+        /// <summary>Change the Network Adaptor of a NIC on a Cloud Server </summary>
+        /// <param name="changeNetworkAdapter">Details of the nic's network adapter to be updated</param>
+        /// <returns>	A standard CaaS response </returns>
+        public async Task<ResponseType> ChangeNicNetworkAdapter(changeNetworkAdapterType changeNetworkAdapter)
+        {
+            return await _apiClient.PostAsync<changeNetworkAdapterType, ResponseType>(ApiUris.ChangeNicNetworkAdapter(_apiClient.OrganizationId), changeNetworkAdapter);
+        }
+    }
 }
