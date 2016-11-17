@@ -98,6 +98,7 @@
     <Compile Include="Image20\HistoricalImageExports.cs" />
     <Compile Include="Image20\ImageExportsInProgress.cs" />
     <Compile Include="Image20\ImportImageType.cs" />
+    <Compile Include="Image20\MoveCustomerImageType.cs" />
     <Compile Include="Network20\FirewallOverride.cs" />
     <Compile Include="Network20\IpAddressList.cs" />
     <Compile Include="Image20\OvfPackages.cs" />

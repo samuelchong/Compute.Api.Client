@@ -122,5 +122,10 @@
 		/// <returns>Customer Image with Exports in progress status</returns>
 		Task<PagedResponse<HistoricalImageExportType>> GetCustomerImagesExportHistory(
 			CustomerImageExportHistoryOptions filteringOptions, IPageableRequest pagingOptions);
-	}
+
+        /// <summary>The move customer image to cluster.</summary>
+        /// <param name="moveCustomerImage">The move customer image.</param>
+        /// <returns>The <see cref="Task"/>.</returns>
+        Task<ResponseType> MoveCustomerImage(MoveCustomerImageType moveCustomerImage);
+    }
 }

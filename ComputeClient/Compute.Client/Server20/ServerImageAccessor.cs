@@ -206,5 +206,13 @@ namespace DD.CBU.Compute.Api.Client.Server20
 				pageSize = response.pageSizeSpecified ? response.pageSize : (int?)null
 			};
 		}
-	}
+
+        /// <summary>The move customer image to cluster.</summary>
+        /// <param name="moveCustomerImage">The move customer image.</param>
+        /// <returns>The <see cref="Task"/>.</returns>
+        public async Task<ResponseType> MoveCustomerImage(MoveCustomerImageType moveCustomerImage)
+        {
+            return await _apiClient.PostAsync<MoveCustomerImageType, ResponseType>(ApiUris.MoveCustomerImageToCluster(_apiClient.OrganizationId), moveCustomerImage);
+        }
+    }
 }

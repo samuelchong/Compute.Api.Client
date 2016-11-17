@@ -1939,6 +1939,14 @@
             return new Uri(string.Format(MCP2_4_PREFIX + "{0}/image/editImageMetadata", orgId), UriKind.Relative);
         }
 
+        /// <summary>Move Customer Image to Cluster </summary>
+        /// <param name="orgId">The org Id. </param>
+        /// <returns>	An URI for move customer image to cluster api. </returns>
+        public static Uri MoveCustomerImageToCluster(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_4_PREFIX + "{0}/image/moveCustomerImage", orgId), UriKind.Relative);
+        }
+
         /// <summary>	Get MCP 2 operating systems</summary>
         /// <param name="orgId">	The organization Id. </param>
         /// <param name="dataCenterId">	The data center Id. </param>
