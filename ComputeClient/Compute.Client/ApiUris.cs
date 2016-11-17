@@ -149,10 +149,20 @@
                 String.Format(MCP2_4_PREFIX + "{0}/server/addNic", orgId), UriKind.Relative);
         }
 
-        /// <summary>	Removes a NIC from a server </summary>
-        /// <param name="orgId">	The org Id. </param>
-        /// <returns>	An URI. </returns>
-        public static Uri RemoveNic(Guid orgId)
+		/// <summary>	Exchange Nic Vlans </summary>
+		/// <remarks>	Adnan, 11/17/2016. </remarks>
+		/// <param name="orgId">	The org Id. </param>
+		/// <returns>	An URI. </returns>
+		public static Uri ExchangeNicVlans(Guid orgId)
+		{
+			return new Uri(
+				String.Format(MCP2_4_PREFIX + "{0}/server/exchangeNicVlans", orgId), UriKind.Relative);
+		}
+
+		/// <summary>	Removes a NIC from a server </summary>
+		/// <param name="orgId">	The org Id. </param>
+		/// <returns>	An URI. </returns>
+		public static Uri RemoveNic(Guid orgId)
         {
             return new Uri(string.Format(MCP2_3_PREFIX + "{0}/server/removeNic", orgId), UriKind.Relative);
         }

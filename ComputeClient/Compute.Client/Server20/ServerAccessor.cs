@@ -225,10 +225,36 @@ namespace DD.CBU.Compute.Api.Client.Server20
             return await _apiClient.PostAsync<AddNicType, ResponseType>(ApiUris.AddNic(_apiClient.OrganizationId), addNicType);
         }
 
-        /// <summary>Removes an additional NIC from a server.</summary>
-        /// <param name="nicId">The NIC id.</param>
-        /// <returns>The <see cref="Task"/>.</returns>
-        public async Task<ResponseType> RemoveNic(Guid nicId)
+		/// <summary>Exchange Nic Vlans.</summary>
+		/// <param name="nicId1">nicId1</param>
+		/// <param name="nicId2">nicId2</param>
+		/// <returns>The <see cref="Task"/>.</returns>
+		public async Task<ResponseType> ExchangeNicVlans(string nicId1, string nicId2)
+		{
+			if (string.IsNullOrWhiteSpace(nicId1))
+			{
+				throw new ArgumentNullException("nicId1");
+			}
+
+			if (string.IsNullOrWhiteSpace(nicId2))
+			{
+				throw new ArgumentNullException("nicId2");
+			}
+
+
+			ExchangeNicVlansType exchangeNicVlansType = new ExchangeNicVlansType
+			{
+				nicId1 = nicId1,
+				nicId2 = nicId2
+			};
+
+			return await _apiClient.PostAsync<ExchangeNicVlansType, ResponseType>(ApiUris.ExchangeNicVlans(_apiClient.OrganizationId), exchangeNicVlansType);
+		}
+
+		/// <summary>Removes an additional NIC from a server.</summary>
+		/// <param name="nicId">The NIC id.</param>
+		/// <returns>The <see cref="Task"/>.</returns>
+		public async Task<ResponseType> RemoveNic(Guid nicId)
         {
             if (nicId == Guid.Empty)
             {

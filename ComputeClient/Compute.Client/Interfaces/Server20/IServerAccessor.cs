@@ -102,10 +102,16 @@
         /// <returns>	A standard CaaS response </returns>
         Task<ResponseType> AddNic(Guid serverId, Guid? vlanId, string privateIpv4, string networkAdapter = null);
 
-        /// <summary>Removes an additional NIC from a server.</summary>
-        /// <param name="nicId">The NIC id.</param>
-        /// <returns>	A standard CaaS response </returns>
-        Task<ResponseType> RemoveNic(Guid nicId);
+	    /// <summary>Exchange Nic Vlans.</summary>
+	    /// <param name="nicId1">nicId1</param>
+	    /// <param name="nicId2">nicId2</param>
+	    /// <returns>The <see cref="Task"/>.</returns>
+	    Task<ResponseType> ExchangeNicVlans(string nicId1, string nicId2);
+
+		/// <summary>Removes an additional NIC from a server.</summary>
+		/// <param name="nicId">The NIC id.</param>
+		/// <returns>	A standard CaaS response </returns>
+		Task<ResponseType> RemoveNic(Guid nicId);
 
         /// <summary>The list nics.</summary>
         /// <param name="vlanId">The vlan id.</param>

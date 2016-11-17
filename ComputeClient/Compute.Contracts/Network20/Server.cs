@@ -1106,8 +1106,49 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         }
     }
 
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+	[System.Xml.Serialization.XmlRootAttribute("exchangeNicVlans", Namespace = "urn:didata.com:api:cloud:types", IsNullable = false)]
+	public partial class ExchangeNicVlansType
+	{
+
+		private string nicId1Field;
+
+		private string nicId2Field;
+
+		/// <remarks/>
+		public string nicId1
+		{
+			get
+			{
+				return this.nicId1Field;
+			}
+			set
+			{
+				this.nicId1Field = value;
+			}
+		}
+
+		/// <remarks/>
+		public string nicId2
+		{
+			get
+			{
+				return this.nicId2Field;
+			}
+			set
+			{
+				this.nicId2Field = value;
+			}
+		}
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
