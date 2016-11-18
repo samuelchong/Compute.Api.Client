@@ -257,8 +257,8 @@ namespace DD.CBU.Compute.Api.Contracts.Image20
 		}
 
 		/// <remarks/>
-		[System.Xml.Serialization.XmlElementAttribute("failure", typeof(HistoricalImageExportTypeFailure))]
-		[System.Xml.Serialization.XmlElementAttribute("success", typeof(HistoricalImageExportTypeSuccess))]
+		[System.Xml.Serialization.XmlElementAttribute("failed", typeof(HistoricalImageExportTypeFailure))]
+		[System.Xml.Serialization.XmlElementAttribute("succeeded", typeof(HistoricalImageExportTypeSuccess))]
 		public object Item
 		{
 			get
@@ -702,18 +702,18 @@ namespace DD.CBU.Compute.Api.Contracts.Image20
 	public partial class HistoricalImageExportTypeFailure
 	{
 
-		private string messageField;
+		private string failureReasonField;
 
 		/// <remarks/>
-		public string message
+		public string failureReason
 		{
 			get
 			{
-				return this.messageField;
+				return this.failureReasonField;
 			}
 			set
 			{
-				this.messageField = value;
+				this.failureReasonField = value;
 			}
 		}
 	}
