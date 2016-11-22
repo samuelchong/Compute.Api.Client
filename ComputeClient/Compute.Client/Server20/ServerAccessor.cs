@@ -207,6 +207,8 @@ namespace DD.CBU.Compute.Api.Client.Server20
                 networkAdapter = networkAdapter
             };
 
+            // Private IP takes priority over vlanId
+            // As Setting VlanId will make the api allocate the ip automatically ignoring the privateIp
             if (!string.IsNullOrEmpty(privateIpv4))
             {
                 nic.privateIpv4 = privateIpv4;

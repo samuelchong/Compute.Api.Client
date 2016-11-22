@@ -1,7 +1,8 @@
 Compute.Api.Client
 ===========================
-
 [![Build status](https://ci.appveyor.com/api/projects/status/fs6f9o10y38d1t5v?svg=true)](https://ci.appveyor.com/project/tonybaloney/dimensiondata-computeclient)
+[![Documentation Status](https://readthedocs.org/projects/computeapiclient/badge/?version=latest)](http://computeapiclient.readthedocs.io/en/latest/?badge=latest)
+[![NuGet](https://img.shields.io/nuget/v/DD.CBU.Compute.Api.Client.svg?maxAge=2592000)](https://www.nuget.org/packages/DD.CBU.Compute.Api.Client)
 
 A C# client library for the Dimension Data CaaS API.
 
