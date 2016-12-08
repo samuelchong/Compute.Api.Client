@@ -30,8 +30,6 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         private string descriptionField;
 
-        private OperatingSystemType operatingSystemField;
-
         private CpuType cpuField;
 
         private uint memoryGbField;
@@ -46,6 +44,10 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         private string datacenterIdField;
 
+        private ClusterType clusterField;
+
+        private ImageTypeNic[] nicField;
+
         /// <remarks/>
         public string name
         {
@@ -58,13 +60,6 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         {
             get { return this.descriptionField; }
             set { this.descriptionField = value; }
-        }
-
-        /// <remarks/>
-        public OperatingSystemType operatingSystem
-        {
-            get { return this.operatingSystemField; }
-            set { this.operatingSystemField = value; }
         }
 
         /// <remarks/>
@@ -119,6 +114,22 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
             get { return this.datacenterIdField; }
             set { this.datacenterIdField = value; }
         }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("cluster")]
+        public ClusterType cluster
+        {
+            get { return this.clusterField; }
+            set { this.clusterField = value; }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("nic")]
+        public ImageTypeNic[] nic
+        {
+            get { return this.nicField; }
+            set { this.nicField = value; }
+        }
     }
 
     /// <remarks/>
@@ -168,6 +179,64 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         {
             get { return this.speedField; }
             set { this.speedField = value; }
+        }
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "urn:didata.com:api:cloud:types")]
+    public partial class ClusterType
+    {
+        private string idField;
+
+        private string nameField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string id
+        {
+            get { return this.idField; }
+            set { this.idField = value; }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string name
+        {
+            get { return this.nameField; }
+            set { this.nameField = value; }
+        }
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "urn:didata.com:api:cloud:types")]
+    public partial class ImageTypeNic
+    {
+        private string networkAdapterField;
+
+        private string keyField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string networkAdapter
+        {
+            get { return this.networkAdapterField; }
+            set { this.networkAdapterField = value; }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string key
+        {
+            get { return this.keyField; }
+            set { this.keyField = value; }
         }
     }
 
@@ -287,6 +356,8 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         private string stateField;
 
+        private GuestType guestField;
+
         private ProgressType progressField;
 
         private VmwareToolsType vmwareToolsField;
@@ -326,6 +397,109 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         {
             get { return this.virtualHardwareField; }
             set { this.virtualHardwareField = value; }
+        }
+
+        /// <remarks/>
+        public GuestType guest
+        {
+            get { return this.guestField; }
+            set { this.guestField = value; }
+        }
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    public partial class GuestType
+    {
+        private OperatingSystemType operatingSystemField;
+
+        private VmToolsType vmToolsField;
+
+        private bool osCustomizationField;
+
+        /// <remarks/>
+        public OperatingSystemType operatingSystem
+        {
+            get { return this.operatingSystemField; }
+            set { this.operatingSystemField = value; }
+        }
+
+        /// <remarks/>
+        public VmToolsType vmTools
+        {
+            get { return this.vmToolsField; }
+            set { this.vmToolsField = value; }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool osCustomization
+        {
+            get { return this.osCustomizationField; }
+            set { this.osCustomizationField = value; }
+        }
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    public partial class VmToolsType
+    {
+        private string typeField;
+
+        private string versionStatusField;
+
+        private string runningStatusField;
+
+        private int apiVersionField;
+
+        private bool apiVersionSpecifiedField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string type
+        {
+            get { return this.typeField; }
+            set { this.typeField = value; }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string versionStatus
+        {
+            get { return this.versionStatusField; }
+            set { this.versionStatusField = value; }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string runningStatus
+        {
+            get { return this.runningStatusField; }
+            set { this.runningStatusField = value; }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int apiVersion
+        {
+            get { return this.apiVersionField; }
+            set { this.apiVersionField = value; }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool apiVersionSpecified
+        {
+            get { return this.apiVersionSpecifiedField; }
+            set { this.apiVersionSpecifiedField = value; }
         }
     }
 
@@ -523,11 +697,59 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         private string osImageKeyField;
 
+        private int sortOrderField;
+
+        private OsImageTypeGuest guestField;
+
         /// <remarks/>
         public string osImageKey
         {
             get { return this.osImageKeyField; }
             set { this.osImageKeyField = value; }
+        }
+
+        /// <remarks/>
+        public int sortOrder
+        {
+            get { return this.sortOrderField; }
+            set { this.sortOrderField = value; }
+        }
+
+        /// <remarks/>
+        public OsImageTypeGuest guest
+        {
+            get { return this.guestField; }
+            set { this.guestField = value; }
+        }
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    [System.Xml.Serialization.XmlRootAttribute("osImage", Namespace = "urn:didata.com:api:cloud:types",
+        IsNullable = false)]
+    public partial class OsImageTypeGuest
+    {
+        private OperatingSystemType operatingSystemField;
+
+        private bool osCustomizationField;
+
+        /// <remarks/>
+        public OperatingSystemType operatingSystem
+        {
+            get { return this.operatingSystemField; }
+            set { this.operatingSystemField = value; }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool osCustomization
+        {
+            get { return this.osCustomizationField; }
+            set { this.osCustomizationField = value; }
         }
     }
 
@@ -631,7 +853,7 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
     public partial class operatingSystems
     {
 
-        private OperatingSystemType[] operatingSystemField;
+        private OperatingSystemDetailType[] operatingSystemField;
 
         private int pageNumberField;
 
@@ -651,7 +873,7 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("operatingSystem")]
-        public OperatingSystemType[] operatingSystem
+        public OperatingSystemDetailType[] operatingSystem
         {
             get { return this.operatingSystemField; }
             set { this.operatingSystemField = value; }

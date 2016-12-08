@@ -94,8 +94,14 @@
     <Compile Include="Drs\ExpandJournalType.cs" />
     <Compile Include="EntityStatus.cs" />
     <Compile Include="Generic\IEntityStatusV2.cs" />
+    <Compile Include="Image20\ExportImageType.cs" />
+    <Compile Include="Image20\HistoricalImageExports.cs" />
+    <Compile Include="Image20\ImageExportsInProgress.cs" />
+    <Compile Include="Image20\ImportImageType.cs" />
+    <Compile Include="Image20\MoveCustomerImageType.cs" />
     <Compile Include="Network20\FirewallOverride.cs" />
     <Compile Include="Network20\IpAddressList.cs" />
+    <Compile Include="Image20\OvfPackages.cs" />
     <Compile Include="Network20\PortList.cs" />
     <Compile Include="Network20\Tag.cs" />
     <Compile Include="Organization\TwoFactorAuthentication.cs" />
@@ -233,6 +239,8 @@
     <Compile Include="Requests\PageableRequest.cs" />
     <Compile Include="Requests\Server20\AntiAffinityRuleListOptions.cs" />
     <Compile Include="Requests\NullFilterOptions.cs" />
+    <Compile Include="Requests\Server20\CustomerImageExportHistoryOptions.cs" />
+    <Compile Include="Requests\Server20\CustomerImageExportInProgressOptions.cs" />
     <Compile Include="Requests\Server20\ServerCustomerImageListOptions.cs" />
     <Compile Include="Requests\Server20\ListNicsListOptions.cs" />
     <Compile Include="Requests\Server20\ServerOSImageListOptions.cs" />
@@ -250,10 +258,12 @@
     <Compile Include="Server10\AntiAffinityRuleTypeServerSummary.cs" />
     <Compile Include="Server\Artifact.cs" />
     <Compile Include="Server\ClientStatusType.cs" />
+    <Compile Include="Server\CloneServerType.cs" />
     <Compile Include="Server\DeployedServers.cs" />
     <Compile Include="Server\DeployedServersWithDisks.cs" />
     <Compile Include="Server\DeployedServersWithSoftwareLabels.cs" />
     <Compile Include="Server\DeployedServersWithStatus.cs" />
+    <Compile Include="Network20\DeployUncustomizedServerType.cs" />
     <Compile Include="Server\DeployedServerType.cs" />
     <Compile Include="Server\DeployedServerWithDisksType.cs" />
     <Compile Include="Server\DeployedServerWithSoftwareLabelsType.cs" />

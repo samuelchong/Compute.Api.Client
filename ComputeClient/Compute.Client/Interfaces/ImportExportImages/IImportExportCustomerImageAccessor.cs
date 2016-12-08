@@ -45,7 +45,7 @@
 		/// <returns>
 		/// The <see cref="Task"/>.
 		/// </returns>
-		Task<IEnumerable<ImageExportRecord>> GetCustomerImagesExportHistory(int count = 20);
+		Task<IEnumerable<ImageExportRecord>> GetCustomerImagesExportHistory_09(int count = 20);
 
 		/// <summary>
 		/// The import customer image.

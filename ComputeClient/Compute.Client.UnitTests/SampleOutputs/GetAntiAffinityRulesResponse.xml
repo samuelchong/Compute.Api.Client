@@ -1,40 +1,28 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<antiAffinityRules
-xmlns="urn:didata.com:api:cloud:types" pageNumber="1" pageCount="1"
-totalCount="1" pageSize="250">
-  <antiAffinityRule id="d4ebfdd1-ec03-45c7-b0be-fbcc0861e9bf" state="NORMAL"
-  created="2015-06-05T14:44:54.000Z" datacenterId="NA9">
-    <serverSummary id="681a6db2-9c7c-4d98-a0c4-7b3d7c1619ba">
-      <name>Production Server 1</name>
-      <description></description>
-      <networkingDetails>
-        <networkInfo networkDomainId="553f26b6-2a73-42c3-a78b-6116f11291d0" networkDomainName="Production Network Domain">
-          <primaryNic id="a6a16a86-7e5b-4138-8c94-3c09f5195a98"
-          privateIpv4="10.0.0.13" ipv6="2607:f480:1111:1348:5909:96d3:29f5:5e4d"
-          vlanId="a6d3e2d7-0092-4f87-b00c-f276127bc26d" vlanName="Main VLAN"/>
-          <additionalNic id="1e35ea03-a8e5-4771-abc0-8269a45c5735"
-          privateIpv4="10.0.3.12" ipv6="2607:f480:1111:1351:73e4:7d49:93f1:31a3"
-          vlanId="8f19ad6d-ebbb-4393-9ef3-060e5f0b0618" vlanName="Secondary VLAN"/>
-        </networkInfo>
-      </networkingDetails>
-    </serverSummary>
-    <serverSummary id="5783e93f-5370-44fc-a772-cd3c29a2ecaa">
-      <name>Production Server 2</name>
-      <description>
-        this is a
-        multiline description
-        so it is
-      </description>
-      <networkingDetails>
-        <networkInfo networkDomainId="553f26b6-2a73-42c3-a78b-6116f11291d0" networkDomainName="Production Network Domain">
-          <primaryNic id="b3b9261e-50d8-4919-bbe6-866b65b223a1"
-          privateIpv4="10.0.3.13" ipv6="2607:f480:1111:1351:5793:ebd8:d01c:53f3"
-          vlanId="8f19ad6d-ebbb-4393-9ef3-060e5f0b0618" vlanName="Production VLAN"/>
-          <additionalNic id="c9975e8c-77e8-4c0c-8aa1-17df726c37cc"
-          privateIpv4="10.0.2.13" ipv6="2607:f480:1111:1350:c7f:bef6:bc89:f0e4"
-          vlanId="5404a06d-a084-4f15-a18a-9dfea006d00c" vlanName="Bus VLAN"/>
-        </networkInfo>
-      </networkingDetails>
-    </serverSummary>
-  </antiAffinityRule>
-</antiAffinityRules>
+<urn:antiAffinityRules pageNumber="2" pageCount="1" totalCount="4" pageSize="3" xmlns:urn="urn:didata.com:api:cloud:types">
+    <urn:antiAffinityRule id="0004ab5d-bb76-47cc-99fc-2795c817095b" datacenterId="NA1">
+        <urn:server id="9c5ea62d-9750-4130-a955-039c5ac9762c">
+            <urn:name>DeployNGOC1</urn:name>
+            <urn:description>Portal server instance 1</urn:description>
+            <urn:networkInfo networkDomainId="4decab3c-dc2f-47e9-8915-934a666336ed">
+                <urn:networkDomainName>Mock Main Network Domain</urn:networkDomainName>
+                <urn:primaryNic privateIpv4="1.2.0.7" ipv6="2607:f480:1111:1411:24db:f50d:c26d:c1c5" vlanId="201dfe4b-946c-4f41-8a59-3c7d33aca5f0" macAddress="DC:35:DE:74:50:71">
+                    <urn:vlanName>HighVlan</urn:vlanName>
+                </urn:primaryNic>
+            </urn:networkInfo>
+        </urn:server>
+        <urn:server id="fe2e74c0-55c6-4a0b-8ab4-2b8342d997b5">
+            <urn:name>NGOC Server</urn:name>
+            <urn:description>Portal server instance 2</urn:description>
+            <urn:networkInfo networkDomainId="4decab3c-dc2f-47e9-8915-934a666336ed">
+                <urn:networkDomainName>Mock Main Network Domain</urn:networkDomainName>
+                <urn:primaryNic privateIpv4="1.2.0.5" ipv6="2607:f480:1111:1411:500e:c1d:4126:c025" vlanId="201dfe4b-946c-4f41-8a59-3c7d33aca5f0" macAddress="DC:35:DE:74:50:71">
+                    <urn:vlanName>HighVlan</urn:vlanName>
+                </urn:primaryNic>
+            </urn:networkInfo>
+        </urn:server>
+        <urn:cluster id="EU6-02" name="clusterName"/>
+        <urn:createTime>2008-09-29T02:49:45</urn:createTime>
+        <urn:state>NORMAL</urn:state>
+    </urn:antiAffinityRule>
+</urn:antiAffinityRules>

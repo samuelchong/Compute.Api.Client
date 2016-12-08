@@ -1,9 +1,11 @@
-﻿namespace DD.CBU.Compute.Api.Client.Server20
+﻿
+namespace DD.CBU.Compute.Api.Client.Server20
 {
     using System;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
+    using DD.CBU.Compute.Api.Contracts.Image20;
     using DD.CBU.Compute.Api.Client.Interfaces;
     using DD.CBU.Compute.Api.Client.Interfaces.Server20;
     using DD.CBU.Compute.Api.Contracts.General;
@@ -47,6 +49,7 @@
         /// Get OS Images
         /// </summary>
         /// <param name="filteringOptions">Filtering options</param>
+        /// <param name="pagingOptions"></param>
         /// <returns>OS Images</returns>
         public async Task<PagedResponse<OsImageType>> GetOsImages(ServerOsImageListOptions filteringOptions = null, IPageableRequest pagingOptions = null)
         {
@@ -107,7 +110,109 @@
         public async Task<ResponseType> EditCustomerImageMetadata(ImageMetadataType imageMetadata)
         {
             return await _apiClient.PostAsync<ImageMetadataType, ResponseType>(
-            ApiUris.EditMcp2CustomerImageMetadata(_apiClient.OrganizationId), imageMetadata);
+            ApiUris.EditMcp2CustomerImageMetadata(_apiClient.OrganizationId), imageMetadata);  
+        }
+
+        /// <summary>
+		/// The import MCP 2.0 customer image to a user-manageable Cluster in a Data Center location.
+		/// </summary>
+		/// <param name="importImage">
+		/// The import image model.
+		/// </param>
+		/// <returns>
+		/// The <see cref="Task"/>.
+		/// </returns>
+		public async Task<ResponseType> ImportCustomerImage(ImportImageType importImage)
+        {
+            return
+                await
+                    _apiClient.PostAsync<ImportImageType, ResponseType>(
+                        ApiUris.ImportMcp2CustomerImage(_apiClient.OrganizationId), importImage);
+        }
+
+        /// <summary>
+        /// The export MCP 2.0 customer image.
+        /// </summary>
+        /// <param name="exportImage">
+        /// The export image model.
+        /// </param>
+        /// <returns>
+        /// The <see cref="Task"/>.
+        /// </returns>
+        public async Task<ResponseType> ExportCustomerImage(ExportImageType exportImage)
+        {
+            return
+                await
+                    _apiClient.PostAsync<ExportImageType, ResponseType>(
+                        ApiUris.ExportMcp2CustomerImage(_apiClient.OrganizationId), exportImage);
+        }
+
+        /// <summary>
+        /// This API call lists all OVF packages in the FTPS account of the calling organization.
+        /// </summary>
+        /// <returns>
+        /// The <see cref="Task"/>.
+        /// </returns>
+        public async Task<ovfPackages> GetOvfPackage()
+        {
+            return
+                await
+                    _apiClient.GetAsync<ovfPackages>(
+                        ApiUris.GetMcp2OvfPackage(_apiClient.OrganizationId));
+        }
+
+        /// <summary>
+        /// Get the status of Customer Image Exports that a particular ogranization has  in progress
+        /// </summary>
+        /// <param name="filteringOptions">Filtering options</param>
+        /// <param name="pagingOptions">Paging options</param>
+        /// <returns>Customer Image with Exports in progress status</returns>
+        public async Task<PagedResponse<ImageExportInProgressType>> GetCustomerImageExportsInProgress(CustomerImageExportInProgressOptions filteringOptions = null, IPageableRequest pagingOptions = null)
+        {
+            var response = await _apiClient.GetAsync<imageExportsInProgress>(
+                ApiUris.GetMcp2CustomerImageExportsInProgress(_apiClient.OrganizationId),
+                pagingOptions,
+                filteringOptions);
+
+            return new PagedResponse<ImageExportInProgressType>
+            {
+                items = response.imageExportInProgress,
+                totalCount = response.totalCountSpecified ? response.totalCount : (int?)null,
+                pageCount = response.pageCountSpecified ? response.pageCount : (int?)null,
+                pageNumber = response.pageNumberSpecified ? response.pageNumber : (int?)null,
+                pageSize = response.pageSizeSpecified ? response.pageSize : (int?)null
+            };
+        }
+
+		/// <summary>
+		/// Get the customer images export history.
+		/// </summary>
+		/// <param name="filteringOptions">Filtering options</param>
+		/// <param name="pagingOptions">Paging options</param>
+		/// <returns>Customer Image with Exports in progress status</returns>
+		public async Task<PagedResponse<HistoricalImageExportType>> GetCustomerImagesExportHistory(CustomerImageExportHistoryOptions filteringOptions = null, IPageableRequest pagingOptions = null)
+		{
+			var response = await _apiClient.GetAsync<historicalImageExports>(
+				ApiUris.GetCustomerImageExportHistory(_apiClient.OrganizationId),
+				pagingOptions,
+				filteringOptions);
+
+			return new PagedResponse<HistoricalImageExportType>
+			{
+				items = response.historicalImageExport,
+				totalCount = response.totalCountSpecified ? response.totalCount : (int?)null,
+				pageCount = response.pageCountSpecified ? response.pageCount : (int?)null,
+				pageNumber = response.pageNumberSpecified ? response.pageNumber : (int?)null,
+				pageSize = response.pageSizeSpecified ? response.pageSize : (int?)null
+			};
+		}
+
+        /// <summary>The move customer image to cluster.</summary>
+        /// <param name="moveCustomerImage">The move customer image.</param>
+        /// <returns>The <see cref="Task"/>.</returns>
+        public async Task<ResponseType> MoveCustomerImage(MoveCustomerImageType moveCustomerImage)
+        {
+            return await _apiClient.PostAsync<MoveCustomerImageType, ResponseType>(ApiUris.MoveCustomerImageToCluster(_apiClient.OrganizationId), moveCustomerImage);
         }
     }
 }

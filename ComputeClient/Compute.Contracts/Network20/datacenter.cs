@@ -288,8 +288,129 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         }
     }
 
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+	public partial class DatacenterClusterType
+    {
+
+		private string displayNameField;
+
+		private string descriptionField;
+
+		private DiskSpeedType[] diskSpeedField;
+
+		private CpuSpeedType[] cpuSpeedField;
+
+		private PropertyType[] propertyField;
+
+		private string idField;
+
+		private bool defaultField;
+
+		/// <remarks/>
+		public string displayName
+		{
+			get
+			{
+				return this.displayNameField;
+			}
+			set
+			{
+				this.displayNameField = value;
+			}
+		}
+
+		/// <remarks/>
+		public string description
+		{
+			get
+			{
+				return this.descriptionField;
+			}
+			set
+			{
+				this.descriptionField = value;
+			}
+		}
+
+		/// <remarks/>
+		[System.Xml.Serialization.XmlElementAttribute("diskSpeed")]
+		public DiskSpeedType[] diskSpeed
+		{
+			get
+			{
+				return this.diskSpeedField;
+			}
+			set
+			{
+				this.diskSpeedField = value;
+			}
+		}
+
+		/// <remarks/>
+		[System.Xml.Serialization.XmlElementAttribute("cpuSpeed")]
+		public CpuSpeedType[] cpuSpeed
+		{
+			get
+			{
+				return this.cpuSpeedField;
+			}
+			set
+			{
+				this.cpuSpeedField = value;
+			}
+		}
+
+		/// <remarks/>
+		[System.Xml.Serialization.XmlElementAttribute("property")]
+		public PropertyType[] property
+		{
+			get
+			{
+				return this.propertyField;
+			}
+			set
+			{
+				this.propertyField = value;
+			}
+		}
+
+		/// <remarks/>
+		[System.Xml.Serialization.XmlAttributeAttribute()]
+		public string id
+		{
+			get
+			{
+				return this.idField;
+			}
+			set
+			{
+				this.idField = value;
+			}
+		}
+
+		/// <remarks/>
+		[System.Xml.Serialization.XmlAttributeAttribute()]
+		public bool @default
+		{
+			get
+			{
+				return this.defaultField;
+			}
+			set
+			{
+				this.defaultField = value;
+			}
+		}
+	}
+
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -301,7 +422,9 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         private CpuSpeedType[] cpuSpeedField;
 
-        private PropertyType[] propertyField;
+		private DatacenterClusterType[] clusterField;
+
+		private PropertyType[] propertyField;
 
         private string typeField;
 
@@ -323,8 +446,22 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
             set { this.cpuSpeedField = value; }
         }
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("property")]
+		/// <remarks/>
+		[System.Xml.Serialization.XmlElementAttribute("cluster")]
+		public DatacenterClusterType[] cluster
+		{
+			get
+			{
+				return this.clusterField;
+			}
+			set
+			{
+				this.clusterField = value;
+			}
+		}
+
+		/// <remarks/>
+		[System.Xml.Serialization.XmlElementAttribute("property")]
         public PropertyType[] property
         {
             get { return this.propertyField; }

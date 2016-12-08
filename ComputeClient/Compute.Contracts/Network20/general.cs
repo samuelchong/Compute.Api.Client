@@ -522,6 +522,14 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string family;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool supportsGuestOsCustomization;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool supportsBackup;
     }
 
     /// <remarks/>

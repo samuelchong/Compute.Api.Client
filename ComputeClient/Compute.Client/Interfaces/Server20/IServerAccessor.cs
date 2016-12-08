@@ -102,10 +102,16 @@
         /// <returns>	A standard CaaS response </returns>
         Task<ResponseType> AddNic(Guid serverId, Guid? vlanId, string privateIpv4, string networkAdapter = null);
 
-        /// <summary>Removes an additional NIC from a server.</summary>
-        /// <param name="nicId">The NIC id.</param>
-        /// <returns>	A standard CaaS response </returns>
-        Task<ResponseType> RemoveNic(Guid nicId);
+	    /// <summary>Exchange Nic Vlans.</summary>
+	    /// <param name="nicId1">nicId1</param>
+	    /// <param name="nicId2">nicId2</param>
+	    /// <returns>The <see cref="Task"/>.</returns>
+	    Task<ResponseType> ExchangeNicVlans(string nicId1, string nicId2);
+
+		/// <summary>Removes an additional NIC from a server.</summary>
+		/// <param name="nicId">The NIC id.</param>
+		/// <returns>	A standard CaaS response </returns>
+		Task<ResponseType> RemoveNic(Guid nicId);
 
         /// <summary>The list nics.</summary>
         /// <param name="vlanId">The vlan id.</param>
@@ -139,5 +145,26 @@
 		/// <returns>The async type of <see cref="ResponseType"/></returns>
 		Task<ResponseType> EditServerMetadata(editServerMetadata editServerMetadata);
 
+        /// <summary>Move server to cluster</summary>
+		/// <param name="moveServer">move server model.</param>
+		/// <returns>The async type of <see cref="ResponseType"/></returns>
+        Task<ResponseType> MoveServer(MoveServerType moveServer);
+
+        /// <summary>Deploys an un customized server to MCP 2.0 data centers </summary>
+        /// <param name="serverDetails">Details of the server to be deployed</param>
+        /// <returns>Response containing the server id</returns>
+        Task<ResponseType> DeployUncustomizedServer(DeployUncustomizedServerType serverDetails);
+
+		/// <summary>
+		/// Clone journal
+		/// </summary>
+		/// <param name="cloneServerType">Clone Server type.</param>
+		/// <returns>The <see cref="ResponseType"/></returns>
+		Task<ResponseType> CloneServer(CloneServerType cloneServerType);
+
+        /// <summary>Change the Network Adaptor of a NIC on a Cloud Server </summary>
+        /// <param name="changeNetworkAdapter">Details of the nic's network adapter to be updated</param>
+        /// <returns>	A standard CaaS response </returns>
+        Task<ResponseType> ChangeNicNetworkAdapter(changeNetworkAdapterType changeNetworkAdapter);
     }
 }

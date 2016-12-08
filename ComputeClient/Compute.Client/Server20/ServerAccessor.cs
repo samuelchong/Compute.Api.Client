@@ -37,8 +37,8 @@ namespace DD.CBU.Compute.Api.Client.Server20
         public async Task<ServersResponseCollection> GetMcp2DeployedServers(ServerListOptions filteringOptions = null, IPageableRequest pagingOptions = null)
         {
             ServersResponseCollection servers = await _apiClient.GetAsync<ServersResponseCollection>(
-                ApiUris.GetMcp2Servers(_apiClient.OrganizationId), 
-                pagingOptions, 
+                ApiUris.GetMcp2Servers(_apiClient.OrganizationId),
+                pagingOptions,
                 filteringOptions);
             return servers;
         }
@@ -59,17 +59,17 @@ namespace DD.CBU.Compute.Api.Client.Server20
         public async Task<PagedResponse<ServerType>> GetServersPaginated(ServerListOptions filteringOptions = null, IPageableRequest pagingOptions = null)
         {
             var response = await _apiClient.GetAsync<ServersResponseCollection>(
-                ApiUris.GetMcp2Servers(_apiClient.OrganizationId), 
-                pagingOptions, 
+                ApiUris.GetMcp2Servers(_apiClient.OrganizationId),
+                pagingOptions,
                 filteringOptions);
 
             return new PagedResponse<ServerType>
             {
-                items = response.Server, 
-                totalCount = response.totalCountSpecified ? response.totalCount : (int?) null, 
-                pageCount = response.pageCountSpecified ? response.pageCount : (int?) null, 
-                pageNumber = response.pageNumberSpecified ? response.pageNumber : (int?) null, 
-                pageSize = response.pageSizeSpecified ? response.pageSize : (int?) null
+                items = response.Server,
+                totalCount = response.totalCountSpecified ? response.totalCount : (int?)null,
+                pageCount = response.pageCountSpecified ? response.pageCount : (int?)null,
+                pageNumber = response.pageNumberSpecified ? response.pageNumber : (int?)null,
+                pageSize = response.pageSizeSpecified ? response.pageSize : (int?)null
             };
         }
 
@@ -96,8 +96,8 @@ namespace DD.CBU.Compute.Api.Client.Server20
         /// <seealso cref="M:DD.CBU.Compute.Api.Client.Interfaces.Server20.IServerAccessor.DeleteServer(Guid)"/>
         public async Task<ResponseType> DeleteServer(Guid serverId)
         {
-            return await _apiClient.PostAsync<DeleteServerType, ResponseType>(ApiUris.DeleteServer(_apiClient.OrganizationId), 
-                new DeleteServerType {id = serverId.ToString()});
+            return await _apiClient.PostAsync<DeleteServerType, ResponseType>(ApiUris.DeleteServer(_apiClient.OrganizationId),
+                new DeleteServerType { id = serverId.ToString() });
         }
 
         /// <summary>	Starts a server. </summary>
@@ -106,8 +106,8 @@ namespace DD.CBU.Compute.Api.Client.Server20
         /// <seealso cref="M:DD.CBU.Compute.Api.Client.Interfaces.Server20.IServerAccessor.StartServer(Guid)"/>
         public async Task<ResponseType> StartServer(Guid serverId)
         {
-            return await _apiClient.PostAsync<StartServerType, ResponseType>(ApiUris.StartServer(_apiClient.OrganizationId), 
-                new StartServerType {id = serverId.ToString()});
+            return await _apiClient.PostAsync<StartServerType, ResponseType>(ApiUris.StartServer(_apiClient.OrganizationId),
+                new StartServerType { id = serverId.ToString() });
         }
 
         /// <summary>	Shutdown server. </summary>
@@ -116,8 +116,8 @@ namespace DD.CBU.Compute.Api.Client.Server20
         /// <seealso cref="M:DD.CBU.Compute.Api.Client.Interfaces.Server20.IServerAccessor.ShutdownServer(Guid)"/>
         public async Task<ResponseType> ShutdownServer(Guid serverId)
         {
-            return await _apiClient.PostAsync<ShutdownServerType, ResponseType>(ApiUris.ShutdownServer(_apiClient.OrganizationId), 
-                new ShutdownServerType {id = serverId.ToString()});
+            return await _apiClient.PostAsync<ShutdownServerType, ResponseType>(ApiUris.ShutdownServer(_apiClient.OrganizationId),
+                new ShutdownServerType { id = serverId.ToString() });
         }
 
         /// <summary>	Reboot server. </summary>
@@ -126,8 +126,8 @@ namespace DD.CBU.Compute.Api.Client.Server20
         /// <seealso cref="M:DD.CBU.Compute.Api.Client.Interfaces.Server20.IServerAccessor.RebootServer(Guid)"/>
         public async Task<ResponseType> RebootServer(Guid serverId)
         {
-            return await _apiClient.PostAsync<RebootServerType, ResponseType>(ApiUris.RebootServer(_apiClient.OrganizationId), 
-                new RebootServerType {id = serverId.ToString()});
+            return await _apiClient.PostAsync<RebootServerType, ResponseType>(ApiUris.RebootServer(_apiClient.OrganizationId),
+                new RebootServerType { id = serverId.ToString() });
         }
 
         /// <summary>	Resets the server described by serverId. </summary>
@@ -136,8 +136,8 @@ namespace DD.CBU.Compute.Api.Client.Server20
         /// <seealso cref="M:DD.CBU.Compute.Api.Client.Interfaces.Server20.IServerAccessor.ResetServer(Guid)"/>
         public async Task<ResponseType> ResetServer(Guid serverId)
         {
-            return await _apiClient.PostAsync<ResetServerType, ResponseType>(ApiUris.ResetServer(_apiClient.OrganizationId), 
-                new ResetServerType {id = serverId.ToString()});
+            return await _apiClient.PostAsync<ResetServerType, ResponseType>(ApiUris.ResetServer(_apiClient.OrganizationId),
+                new ResetServerType { id = serverId.ToString() });
         }
 
         /// <summary>	Power off server. </summary>
@@ -146,8 +146,8 @@ namespace DD.CBU.Compute.Api.Client.Server20
         /// <seealso cref="M:DD.CBU.Compute.Api.Client.Interfaces.Server20.IServerAccessor.PowerOffServer(Guid)"/>
         public async Task<ResponseType> PowerOffServer(Guid serverId)
         {
-            return await _apiClient.PostAsync<PowerOffServerType, ResponseType>(ApiUris.PowerOffServer(_apiClient.OrganizationId), 
-                new PowerOffServerType {id = serverId.ToString()});
+            return await _apiClient.PostAsync<PowerOffServerType, ResponseType>(ApiUris.PowerOffServer(_apiClient.OrganizationId),
+                new PowerOffServerType { id = serverId.ToString() });
         }
 
         /// <summary>	Updates the v mware tools described by serverId. </summary>
@@ -156,8 +156,8 @@ namespace DD.CBU.Compute.Api.Client.Server20
         /// <seealso cref="M:DD.CBU.Compute.Api.Client.Interfaces.Server20.IServerAccessor.UpdateVmwareTools(Guid)"/>
         public async Task<ResponseType> UpdateVmwareTools(Guid serverId)
         {
-            return await _apiClient.PostAsync<UpdateVmwareToolsServerType, ResponseType>(ApiUris.UpdateVmwareTools(_apiClient.OrganizationId), 
-                new UpdateVmwareToolsServerType {id = serverId.ToString()});
+            return await _apiClient.PostAsync<UpdateVmwareToolsServerType, ResponseType>(ApiUris.UpdateVmwareTools(_apiClient.OrganizationId),
+                new UpdateVmwareToolsServerType { id = serverId.ToString() });
         }
 
         /// <summary>	Upgrade virtual hardware for the server. </summary>
@@ -165,8 +165,8 @@ namespace DD.CBU.Compute.Api.Client.Server20
         /// <returns>	A standard CaaS response. </returns>
         public async Task<ResponseType> UpgradeVirtualHardware(Guid serverId)
         {
-            return await _apiClient.PostAsync<UpgradeVirtualHardware, ResponseType>(ApiUris.UpgradeVirtualHardware(_apiClient.OrganizationId), 
-                new UpgradeVirtualHardware {id = serverId.ToString()});
+            return await _apiClient.PostAsync<UpgradeVirtualHardware, ResponseType>(ApiUris.UpgradeVirtualHardware(_apiClient.OrganizationId),
+                new UpgradeVirtualHardware { id = serverId.ToString() });
         }
 
         /// <summary>Deploys a server to MCP1.0 or MCP 2.0 data centers </summary>
@@ -175,7 +175,7 @@ namespace DD.CBU.Compute.Api.Client.Server20
         public async Task<ResponseType> DeployServer(DeployServerType serverDetails)
         {
             return await _apiClient.PostAsync<DeployServerType, ResponseType>(
-                ApiUris.DeployMCP20Server(_apiClient.OrganizationId), 
+                ApiUris.DeployMCP20Server(_apiClient.OrganizationId),
                 serverDetails);
         }
 
@@ -185,8 +185,8 @@ namespace DD.CBU.Compute.Api.Client.Server20
         public async Task<ResponseType> CleanServer(Guid serverId)
         {
             return await _apiClient.PostAsync<CleanServerType, ResponseType>(
-                ApiUris.CleanServer(_apiClient.OrganizationId), 
-                new CleanServerType {id = serverId.ToString()});
+                ApiUris.CleanServer(_apiClient.OrganizationId),
+                new CleanServerType { id = serverId.ToString() });
         }
 
         /// <summary>Adds an additional NIC to a server.</summary>
@@ -202,24 +202,61 @@ namespace DD.CBU.Compute.Api.Client.Server20
                 throw new ArgumentNullException("vlanId");
             }
 
+            var nic = new VlanIdOrPrivateIpType
+            {
+                networkAdapter = networkAdapter
+            };
+
+            // Private IP takes priority over vlanId
+            // As Setting VlanId will make the api allocate the ip automatically ignoring the privateIp
+            if (!string.IsNullOrEmpty(privateIpv4))
+            {
+                nic.privateIpv4 = privateIpv4;
+            }
+            else
+            {
+                nic.vlanId = vlanId.ToString();
+            }
+
             AddNicType addNicType = new AddNicType
             {
                 serverId = serverId.ToString(),
-                nic = new VlanIdOrPrivateIpType
-                {
-                    networkAdapter = networkAdapter,
-                    privateIpv4 = !string.IsNullOrEmpty(privateIpv4) ? privateIpv4 : null,
-                    vlanId = vlanId != null ? vlanId.ToString() : null
-                }
+                nic = nic
             };
 
             return await _apiClient.PostAsync<AddNicType, ResponseType>(ApiUris.AddNic(_apiClient.OrganizationId), addNicType);
         }
 
-        /// <summary>Removes an additional NIC from a server.</summary>
-        /// <param name="nicId">The NIC id.</param>
-        /// <returns>The <see cref="Task"/>.</returns>
-        public async Task<ResponseType> RemoveNic(Guid nicId)
+		/// <summary>Exchange Nic Vlans.</summary>
+		/// <param name="nicId1">nicId1</param>
+		/// <param name="nicId2">nicId2</param>
+		/// <returns>The <see cref="Task"/>.</returns>
+		public async Task<ResponseType> ExchangeNicVlans(string nicId1, string nicId2)
+		{
+			if (string.IsNullOrWhiteSpace(nicId1))
+			{
+				throw new ArgumentNullException("nicId1");
+			}
+
+			if (string.IsNullOrWhiteSpace(nicId2))
+			{
+				throw new ArgumentNullException("nicId2");
+			}
+
+
+			ExchangeNicVlansType exchangeNicVlansType = new ExchangeNicVlansType
+			{
+				nicId1 = nicId1,
+				nicId2 = nicId2
+			};
+
+			return await _apiClient.PostAsync<ExchangeNicVlansType, ResponseType>(ApiUris.ExchangeNicVlans(_apiClient.OrganizationId), exchangeNicVlansType);
+		}
+
+		/// <summary>Removes an additional NIC from a server.</summary>
+		/// <param name="nicId">The NIC id.</param>
+		/// <returns>The <see cref="Task"/>.</returns>
+		public async Task<ResponseType> RemoveNic(Guid nicId)
         {
             if (nicId == Guid.Empty)
             {
@@ -227,8 +264,8 @@ namespace DD.CBU.Compute.Api.Client.Server20
             }
 
             return await _apiClient.PostAsync<RemoveNicType, ResponseType>(
-                ApiUris.RemoveNic(_apiClient.OrganizationId), 
-                new RemoveNicType {id = nicId.ToString()});
+                ApiUris.RemoveNic(_apiClient.OrganizationId),
+                new RemoveNicType { id = nicId.ToString() });
         }
 
         /// <summary>The list nics.</summary>
@@ -246,11 +283,11 @@ namespace DD.CBU.Compute.Api.Client.Server20
             var response = await _apiClient.GetAsync<nics>(ApiUris.ListNics(_apiClient.OrganizationId, vlanId), pagingOptions, filteringOptions);
             return new PagedResponse<NicWithSecurityGroupType>
             {
-                items = response.nic, 
-                totalCount = response.totalCountSpecified ? response.totalCount : (int?) null, 
-                pageCount = response.pageCountSpecified ? response.pageCount : (int?) null, 
-                pageNumber = response.pageNumberSpecified ? response.pageNumber : (int?) null, 
-                pageSize = response.pageSizeSpecified ? response.pageSize : (int?) null
+                items = response.nic,
+                totalCount = response.totalCountSpecified ? response.totalCount : (int?)null,
+                pageCount = response.pageCountSpecified ? response.pageCount : (int?)null,
+                pageNumber = response.pageNumberSpecified ? response.pageNumber : (int?)null,
+                pageSize = response.pageSizeSpecified ? response.pageSize : (int?)null
             };
         }
 
@@ -265,21 +302,21 @@ namespace DD.CBU.Compute.Api.Client.Server20
                         ApiUris.NotifyNicIpChange(_apiClient.OrganizationId), notifyNicIpChange);
         }
 
-		/// <summary>Edit metadata of the server</summary>
-		/// <param name="editServerMetadata">Server metadata change model.</param>
-		/// <returns>The async type of <see cref="ResponseType"/></returns>
-		public async Task<ResponseType> EditServerMetadata(editServerMetadata editServerMetadata)
-		{
-			return await _apiClient.PostAsync<editServerMetadata, ResponseType>(ApiUris.EditServerMetadata(_apiClient.OrganizationId), editServerMetadata);
-		}
+        /// <summary>Edit metadata of the server</summary>
+        /// <param name="editServerMetadata">Server metadata change model.</param>
+        /// <returns>The async type of <see cref="ResponseType"/></returns>
+        public async Task<ResponseType> EditServerMetadata(editServerMetadata editServerMetadata)
+        {
+            return await _apiClient.PostAsync<editServerMetadata, ResponseType>(ApiUris.EditServerMetadata(_apiClient.OrganizationId), editServerMetadata);
+        }
 
-		/// <summary>Updates compute resource properties of a Server </summary>
-		/// <param name="reconfigureServer">Details of the server to be updated</param>
-		/// <returns>	A standard CaaS response </returns>
-		public async Task<ResponseType> ReconfigureServer(ReconfigureServerType reconfigureServer)
+        /// <summary>Updates compute resource properties of a Server </summary>
+        /// <param name="reconfigureServer">Details of the server to be updated</param>
+        /// <returns>	A standard CaaS response </returns>
+        public async Task<ResponseType> ReconfigureServer(ReconfigureServerType reconfigureServer)
         {
             return await _apiClient.PostAsync<ReconfigureServerType, ResponseType>(
-                ApiUris.ReconfigureServer(_apiClient.OrganizationId), 
+                ApiUris.ReconfigureServer(_apiClient.OrganizationId),
                 reconfigureServer);
         }
 
@@ -298,6 +335,42 @@ namespace DD.CBU.Compute.Api.Client.Server20
         public async Task<ResponseType> RemoveDisk(RemoveDiskType removeDisk)
         {
             return await _apiClient.PostAsync<RemoveDiskType, ResponseType>(ApiUris.RemoveDisk(_apiClient.OrganizationId), removeDisk);
+        }
+
+        /// <summary>The move server to cluster.</summary>
+        /// <param name="moveServer">The move server.</param>
+        /// <returns>The <see cref="Task"/>.</returns>
+        public async Task<ResponseType> MoveServer(MoveServerType moveServer)
+        {
+            return await _apiClient.PostAsync<MoveServerType, ResponseType>(ApiUris.MoveServerToCluster(_apiClient.OrganizationId), moveServer);
+        }
+
+        /// <summary>Deploys an un customized server to MCP 2.0 data centers </summary>
+        /// <param name="serverDetails">Details of the server to be deployed</param>
+        /// <returns>Response containing the server id</returns>
+        public async Task<ResponseType> DeployUncustomizedServer(DeployUncustomizedServerType serverDetails)
+        {
+            return await _apiClient.PostAsync<DeployUncustomizedServerType, ResponseType>(
+                ApiUris.DeployUncustomizedServer(_apiClient.OrganizationId),
+                serverDetails);
+        }
+
+		/// <summary>
+		/// Clone journal
+		/// </summary>
+		/// <param name="cloneServerType">Clone Server type.</param>
+		/// <returns>The <see cref="ResponseType"/></returns>
+		public async Task<ResponseType> CloneServer(CloneServerType cloneServerType)
+		{
+			return await _apiClient.PostAsync<CloneServerType, ResponseType>(ApiUris.CloneServer(_apiClient.OrganizationId), cloneServerType);
+		}
+
+        /// <summary>Change the Network Adaptor of a NIC on a Cloud Server </summary>
+        /// <param name="changeNetworkAdapter">Details of the nic's network adapter to be updated</param>
+        /// <returns>	A standard CaaS response </returns>
+        public async Task<ResponseType> ChangeNicNetworkAdapter(changeNetworkAdapterType changeNetworkAdapter)
+        {
+            return await _apiClient.PostAsync<changeNetworkAdapterType, ResponseType>(ApiUris.ChangeNicNetworkAdapter(_apiClient.OrganizationId), changeNetworkAdapter);
         }
     }
 }
